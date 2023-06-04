@@ -68,5 +68,15 @@ namespace Data_Structure.Arrays
             }
             return arr;
         }
+        private int[] ForwordArray(int[] arr)
+        {
+            int lastnumber = arr[arr.Length - 1];
+            for (int i = arr.Length-2; i >=0; i--)
+            {
+                arr[i + 1] = arr[i];
+            }
+            arr[0] = lastnumber;
+            return arr;
+        }
     }
 }
