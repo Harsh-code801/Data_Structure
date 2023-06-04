@@ -41,5 +41,32 @@ namespace Data_Structure.Arrays
             }
             return secondLargest;
         }
+        public void RotateElementByK(int[] arr, int length, int k)
+        {
+            #region Second Solution
+            //Console.WriteLine("input: " + string.Join(",", arr));
+            //for(int i = 0;i<k; i++)
+            //ReverseArray(arr);
+
+            //Console.WriteLine("Result: " + string.Join(",", arr)); 
+            #endregion
+
+            Console.WriteLine("Input: " + string.Join(",", arr));
+            int[] resultArr = new int[length];
+            int mod = k % length;
+            for (int i = 0; i < length; ++i)
+                resultArr[i] = arr[(i + mod) % length];
+            Console.WriteLine("Result: " + string.Join(",", resultArr));
+        }
+        private int[] ReverseArray(int[] arr)
+        {
+            for(int i = 0; i < arr.Length - 1; i++)
+            {
+                int temp = arr[i+1];
+                arr[i + 1] = arr[i];
+                arr[i] = temp;
+            }
+            return arr;
+        }
     }
 }

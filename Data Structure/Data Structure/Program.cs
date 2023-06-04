@@ -13,9 +13,10 @@ namespace DataStructure
             #region SecondLargestNumber
             int[] secondLargest = new int[] { 100, -3, 95, 100, 95, 177, -5, -4, 177, 101 };
             secondLargest = new int[] { 10, 10, 100 };
-            Console.WriteLine("Second Largest Number Is " + array.SecondLargestNumber(secondLargest, secondLargest.Length)); 
+            //Console.WriteLine("Second Largest Number Is " + array.SecondLargestNumber(secondLargest, secondLargest.Length));
             #endregion
-
+            int[] rotateArray = new int[] { 100, -3, 95, 100, 55, 177, 3, -4, -3, 95, 100, 95, 177, -5, -4, 177, 101 };
+            array.RotateElementByK(rotateArray, rotateArray.Length,5);
         }
     }
 }
