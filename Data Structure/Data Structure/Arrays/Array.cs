@@ -95,5 +95,24 @@ namespace Data_Structure.Arrays
             }
             return true;
         }
+        public int Equilibrium(int[] arr, int length)
+        {
+            int leftSum = 0;
+            int rightSum = 0;
+            for (int i = 0;i < length; i++)
+            {
+                rightSum = rightSum + arr[i];
+            }
+            for (int i = 0; i < length; i++)
+            {
+                rightSum -= arr[i];
+                if(leftSum == rightSum)
+                    return i;
+                leftSum += arr[i];
+            }
+            
+            Console.WriteLine("Can not Find Equilibrium Index");
+            return -1;
+        }
     }
 }

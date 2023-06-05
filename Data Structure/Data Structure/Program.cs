@@ -25,6 +25,13 @@ namespace DataStructure
             int[] nonDecrising = new int[] { 4, 2, 1 };
             Console.WriteLine("IsNonDecrisingArray: " + array.IsNonDecrisingArray(nonDecrising, nonDecrising.Length));
             #endregion
+
+            #region Equilibrium
+            int[] Equilibrium = new int[] { -7, 1, 5, 2, -4, 3, 0 };
+            Equilibrium = new int[] { 1, 2, 3, 3, 2, 1 };
+            //Equilibrium = new int[] { 1,2,-2,-1};
+            Console.WriteLine("Equilibrium Index: " + array.Equilibrium(Equilibrium, Equilibrium.Length)); 
+            #endregion
         }
     }
 }
