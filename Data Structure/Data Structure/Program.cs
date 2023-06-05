@@ -30,7 +30,17 @@ namespace DataStructure
             int[] Equilibrium = new int[] { -7, 1, 5, 2, -4, 3, 0 };
             Equilibrium = new int[] { 1, 2, 3, 3, 2, 1 };
             //Equilibrium = new int[] { 1,2,-2,-1};
-            Console.WriteLine("Equilibrium Index: " + array.Equilibrium(Equilibrium, Equilibrium.Length)); 
+            Console.WriteLine("Equilibrium Index: " + array.Equilibrium(Equilibrium, Equilibrium.Length));
+            #endregion
+
+            #region First Missing Posative Number
+            int[] firstMissingPosativeNumber = new int[] { 3, 4, -1, 1 };
+            firstMissingPosativeNumber = new int[] { 2, -9, 5, 11, 1, -10, 7 };
+            firstMissingPosativeNumber = new int[] { 4, 6, 5, 3, 8 };
+            firstMissingPosativeNumber = new int[] { 2, 1, 0, 4 };
+            firstMissingPosativeNumber = new int[] { 0, 0, 2, 1 };
+            firstMissingPosativeNumber = new int[] { 1, 2, 3, 4 };
+            Console.WriteLine("First Missing Posative Value :" + array.firstMissingPosativeNumber(firstMissingPosativeNumber, firstMissingPosativeNumber.Length));
             #endregion
         }
     }

@@ -114,5 +114,60 @@ namespace Data_Structure.Arrays
             Console.WriteLine("Can not Find Equilibrium Index");
             return -1;
         }
+        public int firstMissingPosativeNumber(int[] arr,int length)
+        {
+            //#region FirstSolution
+            //System.Array.Sort(arr);
+            //int[] posativeArray = arr.Where(x => x > 0).ToArray();
+            //if (posativeArray.Length > 0)
+            //{
+            //    int startingValue = 0;
+            //    for (int i = 0; i < posativeArray.Length; i++)
+            //    {
+            //        if (i == 0 && posativeArray[i] == 0)
+            //            continue;
+            //        if (++startingValue != posativeArray[i])
+            //            return startingValue;
+            //    }
+            //    if (posativeArray.Length != arr.Length)
+            //        return ++startingValue;
+            //}
+            //return -1;
+            //#endregion
+           // SortArray(arr);
+            System.Array.Sort(arr);
+
+            int ans = 1;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == ans)
+                {
+                    ++ans;
+                    if (i + 2 == arr.Length)
+                        return -1;
+                }
+            }
+            return ans;
+        }
+        public int[] SortArray(int[] arr)
+        {
+            for(int i = 0; i < arr.Length; i++)
+            {
+                for(int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                        //Swap without temp variable
+                        //X = X + Y = 25 + 23 = 48
+                        //Y = X - Y = 48 - 23 = 25
+                        //X = X - Y = 48 - 25 = 23
+                    }
+                }
+            }
+            return arr;
+        }
     }
 }
