@@ -21,7 +21,7 @@ namespace Data_Structure.Strings
             }
             return result.Trim(' ');
         }
-        public string encodingMessage(string inputString)
+        public string EncodingMessage(string inputString)
         {
             string resultString = string.Empty;
             if (inputString.Length>0)
@@ -41,6 +41,28 @@ namespace Data_Structure.Strings
                 } 
             }
             return resultString;
+        }
+        public int MiniumParanthesis(string inputString) 
+        {
+            int OpeningBracketCount = 0;
+            int missingCount = 0;
+            for (int i = 0; i < inputString.Length; i++)
+            {
+                if (inputString[i] == ')' && OpeningBracketCount <= 0)
+                {
+                    missingCount++;
+                }
+                else if (inputString[i] == ')' && OpeningBracketCount >0)
+                {
+                    OpeningBracketCount--;
+                }
+                else if (inputString[i] == '(')
+                    OpeningBracketCount++;
+
+            }
+            if (OpeningBracketCount > 0)
+                missingCount += OpeningBracketCount;
+            return missingCount;
         }
     }
 }
