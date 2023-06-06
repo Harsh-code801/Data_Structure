@@ -63,7 +63,7 @@ namespace DataStructure
             Console.WriteLine("EncodingMessage: " + stringOperaations.EncodingMessage(encodingMessage));
             #endregion
 
-            #region Encoding Message
+            #region Minium Paranthesis
             string miniumParanthesis = "))(";
             miniumParanthesis = "())";
             miniumParanthesis = ")))((";
