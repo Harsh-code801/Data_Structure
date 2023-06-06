@@ -55,9 +55,13 @@ namespace DataStructure
             string reverseStringByWords = "Hello My Name Is Groot";
             reverseStringByWords = "I love programming very much";
             reverseStringByWords = "a good   example";
-            Console.WriteLine(stringOperaations.ReverseStringWordWise(reverseStringByWords)); 
+            Console.WriteLine(stringOperaations.ReverseStringWordWise(reverseStringByWords));
             #endregion
 
+            #region Encoding Message
+            string encodingMessage = "bbbeeeeeibceeed";//Output = "b3e5i1b1c1e3d1"
+            Console.WriteLine(stringOperaations.encodingMessage(encodingMessage)); 
+            #endregion
 
             #endregion
         }
