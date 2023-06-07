@@ -113,5 +113,46 @@ namespace Data_Structure.Strings
             }
             return Math.Min(t1,t2);
         }
+        public string NextSmallestPalindrome(string inputeString,bool add = true)// add is for recursive call
+        {
+            string []flow = (inputeString.Length / 2).ToString().Split(".");
+
+            if (inputeString.Count(x=>x == '9') == inputeString.Length)
+            {
+                return (int.Parse(inputeString) + 1).ToString();
+            }
+            else if (inputeString.Length % 2 == 0)
+            {
+                double temp = double.Parse(string.Concat(inputeString.Substring(0, inputeString.Length / 2), string.Join("", string.Concat(inputeString.Substring(0, inputeString.Length / 2).Reverse().ToArray()))));
+                if (double.Parse(inputeString) < temp)
+                {
+                    return temp.ToString();
+                }
+                else
+                {
+                    string firstString = (int.Parse(inputeString.Substring(0, inputeString.Length / 2)) + 1).ToString();
+                    return string.Concat(firstString, string.Join("", firstString.Reverse().ToArray()));
+                }
+
+            }
+            else
+            {
+                int middleNumber = int.Parse(flow[0]);
+                string firstString = inputeString.Substring(0, middleNumber);
+                string secondString = inputeString.Substring(middleNumber + 1, inputeString.Length - (middleNumber+1));
+                int temp = int.Parse(inputeString[middleNumber].ToString());
+                if (temp == 9)
+                {
+                    inputeString = string.Concat((int.Parse(string.Concat(firstString, temp)) + 1).ToString(), secondString);
+                    return NextSmallestPalindrome(inputeString, false);
+                }
+                if(Double.Parse(inputeString)<double.Parse(string.Concat(firstString, add ? (int.Parse(inputeString[middleNumber].ToString())).ToString() : inputeString[middleNumber].ToString(), string.Join("", firstString.Reverse().ToArray()))))
+                {
+                    return string.Concat(firstString, add ? (int.Parse(inputeString[middleNumber].ToString())).ToString() : inputeString[middleNumber].ToString(), string.Join("", firstString.Reverse().ToArray()));
+                }
+                return string.Concat(firstString, add ? (int.Parse(inputeString[middleNumber].ToString()) + 1).ToString() : inputeString[middleNumber].ToString(), string.Join("", firstString.Reverse().ToArray()));
+
+            }
+        }
     }
 }

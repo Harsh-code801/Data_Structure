@@ -76,6 +76,21 @@ namespace DataStructure
             beautifuString = "1010";
             Console.WriteLine("Beautify string Change Count " + stringOperaations.BeautifyStringWithMinChanges(beautifuString));
             #endregion
+
+            #region Next Smallest Palindrome
+            string NextSmallestPalindrome = "23545";
+            NextSmallestPalindrome = "1337";
+            NextSmallestPalindrome = "8999";
+            NextSmallestPalindrome = "999";
+            NextSmallestPalindrome = "1234628";
+            NextSmallestPalindrome = "713322";
+            NextSmallestPalindrome = "14587678322";
+            NextSmallestPalindrome = "125322";
+            NextSmallestPalindrome = "783322";
+            NextSmallestPalindrome = "94187978322";
+            Console.WriteLine("Next Smallest Palindrome " + stringOperaations.NextSmallestPalindrome(NextSmallestPalindrome)); 
+            #endregion
+
             #endregion
         }
     }
