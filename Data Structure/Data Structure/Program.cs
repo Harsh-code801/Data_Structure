@@ -69,6 +69,13 @@ namespace DataStructure
             miniumParanthesis = ")))((";
             Console.WriteLine("Minium Paranthesis " + stringOperaations.MiniumParanthesis(miniumParanthesis));
             #endregion
+
+            #region Beautify String
+            string beautifuString = "0100101010";
+            beautifuString = "111111";
+            beautifuString = "1010";
+            Console.WriteLine("Beautify string Change Count " + stringOperaations.BeautifyStringWithMinChanges(beautifuString));
+            #endregion
             #endregion
         }
     }
