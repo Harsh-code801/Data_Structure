@@ -35,40 +35,7 @@ namespace Data_Structure.Multi_Dimensional_Array
             }
             Console.WriteLine("======================================");
             int[,] newMatrix = new int[oldMatrix.GetLength(1), oldMatrix.GetLength(0)];
-            int newRow = 0, neweColumn = 0;
-            for(int i = oldMatrix.GetLength(1); i >= 0; i++)
-            {
-                for (j = 0; j > oldMatrix.GetLength(0); j++)
-                {
-                    newMatrix[newRow,newColumn]
-                }
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            int newRow = 0, newColumn = 0;
             for (int oldColumn = oldMatrix.GetLength(1) - 1; oldColumn >= 0; oldColumn--)
             {
                 newColumn = 0;
