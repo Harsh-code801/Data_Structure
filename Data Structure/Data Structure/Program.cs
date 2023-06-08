@@ -94,14 +94,21 @@ namespace DataStructure
                 #endregion
             }
             #region Multi-Dimensional Arrays
+            
+            MultiDimArr multiDimArr = new MultiDimArr();
 
             #region SymmetricMatrix
-            MultiDimArr multiDimArr = new MultiDimArr();
             int[,] SymmetricMatrix = new int[,] { { 1, 2, 3 }, { 2, 4, 5 }, { 3, 5, 8 } };
             SymmetricMatrix = new int[,] { { 3, 5, 8 }, { 3, 4, 7 }, { 8, 5, 3 } };
-            Console.WriteLine(multiDimArr.iSSymmetricMatrix(SymmetricMatrix)); 
+            Console.WriteLine(multiDimArr.ISSymmetricMatrix(SymmetricMatrix));
             #endregion
 
+            #region RotateMatrix By 90 Degree
+            int[,] rotate90Degree = new int[,] { { 1, 2, 3 }, { 2, 4, 5 }, { 3, 5, 8 } };
+            rotate90Degree = new int[,] { { 3, 5, 8 }, { 3, 4, 7 }, { 8, 5, 3 } };
+            rotate90Degree = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 }, { 13, 14, 15 } };
+            multiDimArr.RotateMatrixBy90Degree(rotate90Degree);
+            #endregion
 
             #endregion
 
