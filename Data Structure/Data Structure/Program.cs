@@ -110,6 +110,21 @@ namespace DataStructure
             multiDimArr.RotateMatrixBy90Degree(rotate90Degree);
             #endregion
 
+            #region set Matrix Zero
+            int[,] setMatrixZero = new int[,] { { 7, 19, 3 }, { 4, 21, 0 } };
+            setMatrixZero = new int[,] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
+            setMatrixZero = new int[,] { { 0, 1, 2, 0 }, { 3, 4, 5, 2 }, { 1, 3, 1, 5 } };
+            multiDimArr.SetMatrixZero(setMatrixZero);
+            #endregion
+
+            #region Sprial Order
+            int[,] sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 14, 15, 16, 5 }, { 13, 20, 17, 6 }, { 12, 19, 18, 7 }, { 11, 10, 9, 8 } };
+            sprialOrder = new int[,] { { 1, 2 }, { 8, 3 }, { 7, 4 }, { 6, 5 } };
+            sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 8, 7, 6, 5 } };
+            sprialOrder = new int[,] { { 1, 2, 3, 4, 5, 6 }, { 20, 21, 22, 23, 24, 7 }, { 19, 32, 33, 34, 25, 8 }, { 18, 31, 36, 35, 26, 9 }, { 17, 30, 29, 28, 27, 10 }, { 16, 15, 14, 13, 12, 11 } };
+            Console.WriteLine(multiDimArr.SpiralOrder(sprialOrder)); 
+            #endregion
+
             #endregion
 
         }
