@@ -1,4 +1,5 @@
 ﻿using Data_Structure.Arrays;
+using Data_Structure.Map_And_Set;
 using Data_Structure.Multi_Dimensional_Array;
 using System;
 
@@ -92,8 +93,8 @@ namespace DataStructure
                 #endregion
 
                 #endregion
-            }
-            #region Multi-Dimensional Arrays
+            
+                #region Multi-Dimensional Arrays
             
             MultiDimArr multiDimArr = new MultiDimArr();
 
@@ -122,11 +123,21 @@ namespace DataStructure
             sprialOrder = new int[,] { { 1, 2 }, { 8, 3 }, { 7, 4 }, { 6, 5 } };
             sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 8, 7, 6, 5 } };
             sprialOrder = new int[,] { { 1, 2, 3, 4, 5, 6 }, { 20, 21, 22, 23, 24, 7 }, { 19, 32, 33, 34, 25, 8 }, { 18, 31, 36, 35, 26, 9 }, { 17, 30, 29, 28, 27, 10 }, { 16, 15, 14, 13, 12, 11 } };
-            Console.WriteLine(multiDimArr.SpiralOrder(sprialOrder)); 
+            Console.WriteLine(multiDimArr.SpiralOrder(sprialOrder));
+                #endregion
+
+                #endregion
+            }
+            #region Maps And Set
+
+
+            #region Make Unique Array
+            MapAndSet mapAndSet = new MapAndSet();
+            int[] UniqueArray = new int[] { 1, 3, 44, 5, 1, 7, 7, 7, 7, 3, 44 };
+            Console.WriteLine(mapAndSet.MakeUniqueArray(UniqueArray)); 
             #endregion
 
             #endregion
-
         }
     }
 }
