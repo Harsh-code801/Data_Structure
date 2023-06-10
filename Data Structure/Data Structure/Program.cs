@@ -137,11 +137,15 @@ namespace DataStructure
             Console.WriteLine("UniqueArray: "+mapAndSet.MakeUniqueArray(UniqueArray));
             #endregion
 
+            #region First Non Repeating Character
             string FirstNonRepeatingCharacter = "geeksforgeeks";
             FirstNonRepeatingCharacter = "leetcode";
             FirstNonRepeatingCharacter = "AAAbcdb";
             FirstNonRepeatingCharacter = " ABcdABcd\r\n";
-            Console.WriteLine("FirstNonRepeatingCharacter: "+mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter));
+            Console.WriteLine("FirstNonRepeatingCharacter: " + mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter)); 
+            #endregion
+
+
             #endregion
         }
     }
