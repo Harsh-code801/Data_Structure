@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Data_Structure.Map_And_Set
 {
@@ -23,16 +22,16 @@ namespace Data_Structure.Map_And_Set
                 if (!list.Contains(arr[i]))
                     list.Add(arr[i]);
             }
-            return arr.Length - list.Count; 
+            return arr.Length - list.Count;
             #endregion
         }
         public char FirstNonRepeatingCharacter(string input)
         {
-            for(int i = 0; i < input.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (!char.IsDigit(input[i]) && input[i] !=' ' && input[i] != '\r' && input[i] != '\n')
+                if (!char.IsDigit(input[i]) && input[i] != ' ' && input[i] != '\r' && input[i] != '\n')
                 {
-                    if(input.Count(x => x == input[i]) == 1)
+                    if (input.Count(x => x == input[i]) == 1)
                         return input[i];
                 }
             }
@@ -40,19 +39,19 @@ namespace Data_Structure.Map_And_Set
         }
         public int[] LongestSubarrayZeroSum(int[] arr)
         {
-            List<KeyValuePair<int, string>> lst = new List<KeyValuePair<int, string>>(); 
-            for(int i= 0; i < arr.Length; i++)
+            List<KeyValuePair<int, string>> lst = new List<KeyValuePair<int, string>>();
+            for (int i = 0; i < arr.Length; i++)
             {
                 int temp = 0;
                 for (int j = i; j < arr.Length; j++)
                 {
                     temp += arr[j];
-                    if(temp == 0)
+                    if (temp == 0)
                     {
                         if (j == i)
                             lst.Add(new KeyValuePair<int, string>(1, $"{j}-{j}"));
                         else
-                            lst.Add(new KeyValuePair<int, string>((j - i)+1, $"{i}-{j}"));
+                            lst.Add(new KeyValuePair<int, string>((j - i) + 1, $"{i}-{j}"));
                     }
                 }
             }
@@ -68,6 +67,22 @@ namespace Data_Structure.Map_And_Set
             {
                 return new int[] { };
             }
+        }
+
+        public int CountAllSubarraysHavingSumDivisibleByK(int[] arr, int k)
+        {
+            int ResultCount = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int temp = 0;
+                for (int j = i; j < arr.Length; j++)
+                {
+                    temp += arr[j];
+                    if ((Double)temp / k == 0.0 || (Double)temp / k == -0.0 || (Double)temp / k == 1 || (Double)temp / k == -1)
+                        ResultCount++;
+                }
+            }
+            return ResultCount;
         }
     }
 }

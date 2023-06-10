@@ -93,37 +93,37 @@ namespace DataStructure
                 #endregion
 
                 #endregion
-            
+
                 #region Multi-Dimensional Arrays
-            
-            MultiDimArr multiDimArr = new MultiDimArr();
 
-            #region SymmetricMatrix
-            int[,] SymmetricMatrix = new int[,] { { 1, 2, 3 }, { 2, 4, 5 }, { 3, 5, 8 } };
-            SymmetricMatrix = new int[,] { { 3, 5, 8 }, { 3, 4, 7 }, { 8, 5, 3 } };
-            Console.WriteLine(multiDimArr.ISSymmetricMatrix(SymmetricMatrix));
-            #endregion
+                MultiDimArr multiDimArr = new MultiDimArr();
 
-            #region RotateMatrix By 90 Degree
-            int[,] rotate90Degree = new int[,] { { 1, 2, 3 }, { 2, 4, 5 }, { 3, 5, 8 } };
-            rotate90Degree = new int[,] { { 3, 5, 8 }, { 3, 4, 7 }, { 8, 5, 3 } };
-            rotate90Degree = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 }, { 13, 14, 15 } };
-            multiDimArr.RotateMatrixBy90Degree(rotate90Degree);
-            #endregion
+                #region SymmetricMatrix
+                int[,] SymmetricMatrix = new int[,] { { 1, 2, 3 }, { 2, 4, 5 }, { 3, 5, 8 } };
+                SymmetricMatrix = new int[,] { { 3, 5, 8 }, { 3, 4, 7 }, { 8, 5, 3 } };
+                Console.WriteLine(multiDimArr.ISSymmetricMatrix(SymmetricMatrix));
+                #endregion
 
-            #region set Matrix Zero
-            int[,] setMatrixZero = new int[,] { { 7, 19, 3 }, { 4, 21, 0 } };
-            setMatrixZero = new int[,] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
-            setMatrixZero = new int[,] { { 0, 1, 2, 0 }, { 3, 4, 5, 2 }, { 1, 3, 1, 5 } };
-            multiDimArr.SetMatrixZero(setMatrixZero);
-            #endregion
+                #region RotateMatrix By 90 Degree
+                int[,] rotate90Degree = new int[,] { { 1, 2, 3 }, { 2, 4, 5 }, { 3, 5, 8 } };
+                rotate90Degree = new int[,] { { 3, 5, 8 }, { 3, 4, 7 }, { 8, 5, 3 } };
+                rotate90Degree = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 }, { 13, 14, 15 } };
+                multiDimArr.RotateMatrixBy90Degree(rotate90Degree);
+                #endregion
 
-            #region Sprial Order
-            int[,] sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 14, 15, 16, 5 }, { 13, 20, 17, 6 }, { 12, 19, 18, 7 }, { 11, 10, 9, 8 } };
-            sprialOrder = new int[,] { { 1, 2 }, { 8, 3 }, { 7, 4 }, { 6, 5 } };
-            sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 8, 7, 6, 5 } };
-            sprialOrder = new int[,] { { 1, 2, 3, 4, 5, 6 }, { 20, 21, 22, 23, 24, 7 }, { 19, 32, 33, 34, 25, 8 }, { 18, 31, 36, 35, 26, 9 }, { 17, 30, 29, 28, 27, 10 }, { 16, 15, 14, 13, 12, 11 } };
-            Console.WriteLine(multiDimArr.SpiralOrder(sprialOrder));
+                #region set Matrix Zero
+                int[,] setMatrixZero = new int[,] { { 7, 19, 3 }, { 4, 21, 0 } };
+                setMatrixZero = new int[,] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
+                setMatrixZero = new int[,] { { 0, 1, 2, 0 }, { 3, 4, 5, 2 }, { 1, 3, 1, 5 } };
+                multiDimArr.SetMatrixZero(setMatrixZero);
+                #endregion
+
+                #region Sprial Order
+                int[,] sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 14, 15, 16, 5 }, { 13, 20, 17, 6 }, { 12, 19, 18, 7 }, { 11, 10, 9, 8 } };
+                sprialOrder = new int[,] { { 1, 2 }, { 8, 3 }, { 7, 4 }, { 6, 5 } };
+                sprialOrder = new int[,] { { 1, 2, 3, 4 }, { 8, 7, 6, 5 } };
+                sprialOrder = new int[,] { { 1, 2, 3, 4, 5, 6 }, { 20, 21, 22, 23, 24, 7 }, { 19, 32, 33, 34, 25, 8 }, { 18, 31, 36, 35, 26, 9 }, { 17, 30, 29, 28, 27, 10 }, { 16, 15, 14, 13, 12, 11 } };
+                Console.WriteLine(multiDimArr.SpiralOrder(sprialOrder));
                 #endregion
 
                 #endregion
@@ -134,7 +134,7 @@ namespace DataStructure
 
             #region Make Unique Array
             int[] UniqueArray = new int[] { 1, 3, 44, 5, 1, 7, 7, 7, 7, 3, 44 };
-            Console.WriteLine("UniqueArray: "+mapAndSet.MakeUniqueArray(UniqueArray));
+            Console.WriteLine("UniqueArray: " + mapAndSet.MakeUniqueArray(UniqueArray));
             #endregion
 
             #region First Non Repeating Character
@@ -146,10 +146,16 @@ namespace DataStructure
             #endregion
 
             #region Longest Subarray Zero Sum
-            int[] longestSubarrayZeroSum = new int[] { 15, -2, 2, -8, 1, 7, 10,0, 23 };
+            int[] longestSubarrayZeroSum = new int[] { 15, -2, 2, -8, 1, 7, 10, 0, 23 };
             //longestSubarrayZeroSum = new int[] { 1, 3, -1, 4, -4 };
             //longestSubarrayZeroSum = new int[] { 1, -1, 2, -2 };
-            Console.WriteLine(string.Join(",", mapAndSet.LongestSubarrayZeroSum(longestSubarrayZeroSum)));
+            Console.WriteLine("Longest Subarray With Zero Sum: " + string.Join(",", mapAndSet.LongestSubarrayZeroSum(longestSubarrayZeroSum)));
+            #endregion
+
+            #region Count all sub-arrays having sum divisible by k
+            int[] subArraySumDividedByK = new int[] { 5, 0, 2, 3, 1 };//k = 5
+            subArraySumDividedByK = new int[] { 4, 5, 0, -2, -3, 1 };//k = 5
+            Console.WriteLine("Count all sub-arrays having sum divisible by k: " + mapAndSet.CountAllSubarraysHavingSumDivisibleByK(subArraySumDividedByK, 5));
             #endregion
 
             #endregion
