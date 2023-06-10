@@ -158,6 +158,13 @@ namespace DataStructure
             Console.WriteLine("Count all sub-arrays having sum divisible by k: " + mapAndSet.CountAllSubarraysHavingSumDivisibleByK(subArraySumDividedByK, 5));
             #endregion
 
+            #region Group Anagrams
+            string[] groupAnagrams = new string[] { "abab", "baba", "aabb", "abbc" };
+            groupAnagrams = new string[] { "cat", "dog", "tac", "god", "act" };
+            groupAnagrams = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
+            Console.WriteLine("Group Anagrams: " + mapAndSet.GroupAnagrams(groupAnagrams));
+            #endregion
+
             #endregion
         }
     }

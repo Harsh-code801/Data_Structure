@@ -84,5 +84,48 @@ namespace Data_Structure.Map_And_Set
             }
             return ResultCount;
         }
+        public List<List<String>> GroupAnagrams(string[] input)
+        {
+            List<List<string>> lst = new List<List<string>>();
+            for(int i = 0; i < input.Length; i++)
+            {
+                List<string> temp = new List<string>();
+                for(int j = i+1; j < input.Length; j++)
+                {
+                    if (!string.IsNullOrEmpty(input[i]))
+                    {
+                        char[] arr = input[i].ToCharArray();
+                        int charCount = arr.Length;
+                        if (input[j].Length == arr.Length)
+                        {
+                            for (int k = 0; k < arr.Length; k++)
+                            {
+                                if (input[j].Contains(arr[k]))
+                                    charCount--;
+                            } 
+                        }
+                        if(charCount == 0)
+                        {
+                            temp.Add(input[j]);
+                            input[j] = "";
+                        }
+                    }
+                }
+                if (temp.Count > 0)
+                {
+                    temp.Add(input[i]);
+                    lst.Add(temp);
+                }
+            }
+            PrintNestedList(lst);
+            return lst;
+        }
+        private void PrintNestedList (List<List<String>> lst)
+        {
+            for(int i = 0; i < lst.Count; i++)
+            {
+                Console.WriteLine(String.Join(" ||| ", lst[i]));
+            }
+        }
     }
 }
