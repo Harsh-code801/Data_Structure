@@ -38,5 +38,36 @@ namespace Data_Structure.Map_And_Set
             }
             return '0';
         }
+        public int[] LongestSubarrayZeroSum(int[] arr)
+        {
+            List<KeyValuePair<int, string>> lst = new List<KeyValuePair<int, string>>(); 
+            for(int i= 0; i < arr.Length; i++)
+            {
+                int temp = 0;
+                for (int j = i; j < arr.Length; j++)
+                {
+                    temp += arr[j];
+                    if(temp == 0)
+                    {
+                        if (j == i)
+                            lst.Add(new KeyValuePair<int, string>(1, $"{j}-{j}"));
+                        else
+                            lst.Add(new KeyValuePair<int, string>((j - i)+1, $"{i}-{j}"));
+                    }
+                }
+            }
+            if (lst.Count > 0)
+            {
+                var lstRes = lst.OrderByDescending(x => x.Key).FirstOrDefault();
+                int[] arr2 = Array.ConvertAll(lstRes.Value.Split('-').ToArray(), S => int.Parse(S));
+                int[] result = new int[lstRes.Key];
+                Array.Copy(arr, arr2[0], result, 0, lstRes.Key);
+                return result;
+            }
+            else
+            {
+                return new int[] { };
+            }
+        }
     }
 }

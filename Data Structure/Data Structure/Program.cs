@@ -142,9 +142,15 @@ namespace DataStructure
             FirstNonRepeatingCharacter = "leetcode";
             FirstNonRepeatingCharacter = "AAAbcdb";
             FirstNonRepeatingCharacter = " ABcdABcd\r\n";
-            Console.WriteLine("FirstNonRepeatingCharacter: " + mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter)); 
+            Console.WriteLine("FirstNonRepeatingCharacter: " + mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter));
             #endregion
 
+            #region Longest Subarray Zero Sum
+            int[] longestSubarrayZeroSum = new int[] { 15, -2, 2, -8, 1, 7, 10,0, 23 };
+            //longestSubarrayZeroSum = new int[] { 1, 3, -1, 4, -4 };
+            //longestSubarrayZeroSum = new int[] { 1, -1, 2, -2 };
+            Console.WriteLine(string.Join(",", mapAndSet.LongestSubarrayZeroSum(longestSubarrayZeroSum)));
+            #endregion
 
             #endregion
         }
