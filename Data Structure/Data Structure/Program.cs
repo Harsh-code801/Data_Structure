@@ -130,13 +130,18 @@ namespace DataStructure
             }
             #region Maps And Set
 
+            MapAndSet mapAndSet = new MapAndSet();
 
             #region Make Unique Array
-            MapAndSet mapAndSet = new MapAndSet();
             int[] UniqueArray = new int[] { 1, 3, 44, 5, 1, 7, 7, 7, 7, 3, 44 };
-            Console.WriteLine(mapAndSet.MakeUniqueArray(UniqueArray)); 
+            Console.WriteLine("UniqueArray: "+mapAndSet.MakeUniqueArray(UniqueArray));
             #endregion
 
+            string FirstNonRepeatingCharacter = "geeksforgeeks";
+            FirstNonRepeatingCharacter = "leetcode";
+            FirstNonRepeatingCharacter = "AAAbcdb";
+            FirstNonRepeatingCharacter = " ABcdABcd\r\n";
+            Console.WriteLine("FirstNonRepeatingCharacter: "+mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter));
             #endregion
         }
     }

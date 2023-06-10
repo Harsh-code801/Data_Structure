@@ -26,6 +26,17 @@ namespace Data_Structure.Map_And_Set
             return arr.Length - list.Count; 
             #endregion
         }
-
+        public char FirstNonRepeatingCharacter(string input)
+        {
+            for(int i = 0; i < input.Length; i++)
+            {
+                if (!char.IsDigit(input[i]) && input[i] !=' ' && input[i] != '\r' && input[i] != '\n')
+                {
+                    if(input.Count(x => x == input[i]) == 1)
+                        return input[i];
+                }
+            }
+            return '0';
+        }
     }
 }
