@@ -1,6 +1,7 @@
 ﻿using Data_Structure.Arrays;
 using Data_Structure.Map_And_Set;
 using Data_Structure.Multi_Dimensional_Array;
+using Data_Structure.Two_Pointers;
 using System;
 
 namespace DataStructure
@@ -127,42 +128,56 @@ namespace DataStructure
                 #endregion
 
                 #endregion
+
+                #region Maps And Set
+
+                MapAndSet mapAndSet = new MapAndSet();
+
+                #region Make Unique Array
+                int[] UniqueArray = new int[] { 1, 3, 44, 5, 1, 7, 7, 7, 7, 3, 44 };
+                Console.WriteLine("UniqueArray: " + mapAndSet.MakeUniqueArray(UniqueArray));
+                #endregion
+
+                #region First Non Repeating Character
+                string FirstNonRepeatingCharacter = "geeksforgeeks";
+                FirstNonRepeatingCharacter = "leetcode";
+                FirstNonRepeatingCharacter = "AAAbcdb";
+                FirstNonRepeatingCharacter = " ABcdABcd\r\n";
+                Console.WriteLine("FirstNonRepeatingCharacter: " + mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter));
+                #endregion
+
+                #region Longest Subarray Zero Sum
+                int[] longestSubarrayZeroSum = new int[] { 15, -2, 2, -8, 1, 7, 10, 0, 23 };
+                //longestSubarrayZeroSum = new int[] { 1, 3, -1, 4, -4 };
+                //longestSubarrayZeroSum = new int[] { 1, -1, 2, -2 };
+                Console.WriteLine("Longest Subarray With Zero Sum: " + string.Join(",", mapAndSet.LongestSubarrayZeroSum(longestSubarrayZeroSum)));
+                #endregion
+
+                #region Count all sub-arrays having sum divisible by k
+                int[] subArraySumDividedByK = new int[] { 5, 0, 2, 3, 1 };//k = 5
+                subArraySumDividedByK = new int[] { 4, 5, 0, -2, -3, 1 };//k = 5
+                Console.WriteLine("Count all sub-arrays having sum divisible by k: " + mapAndSet.CountAllSubarraysHavingSumDivisibleByK(subArraySumDividedByK, 5));
+                #endregion
+
+                #region Group Anagrams
+                string[] groupAnagrams = new string[] { "abab", "baba", "aabb", "abbc" };
+                groupAnagrams = new string[] { "cat", "dog", "tac", "god", "act" };
+                groupAnagrams = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
+                Console.WriteLine("Group Anagrams: " + mapAndSet.GroupAnagrams(groupAnagrams));
+                #endregion
+
+                #endregion
             }
-            #region Maps And Set
 
-            MapAndSet mapAndSet = new MapAndSet();
+            #region Two Pointers
 
-            #region Make Unique Array
-            int[] UniqueArray = new int[] { 1, 3, 44, 5, 1, 7, 7, 7, 7, 3, 44 };
-            Console.WriteLine("UniqueArray: " + mapAndSet.MakeUniqueArray(UniqueArray));
-            #endregion
-
-            #region First Non Repeating Character
-            string FirstNonRepeatingCharacter = "geeksforgeeks";
-            FirstNonRepeatingCharacter = "leetcode";
-            FirstNonRepeatingCharacter = "AAAbcdb";
-            FirstNonRepeatingCharacter = " ABcdABcd\r\n";
-            Console.WriteLine("FirstNonRepeatingCharacter: " + mapAndSet.FirstNonRepeatingCharacter(FirstNonRepeatingCharacter));
-            #endregion
-
-            #region Longest Subarray Zero Sum
-            int[] longestSubarrayZeroSum = new int[] { 15, -2, 2, -8, 1, 7, 10, 0, 23 };
-            //longestSubarrayZeroSum = new int[] { 1, 3, -1, 4, -4 };
-            //longestSubarrayZeroSum = new int[] { 1, -1, 2, -2 };
-            Console.WriteLine("Longest Subarray With Zero Sum: " + string.Join(",", mapAndSet.LongestSubarrayZeroSum(longestSubarrayZeroSum)));
-            #endregion
-
-            #region Count all sub-arrays having sum divisible by k
-            int[] subArraySumDividedByK = new int[] { 5, 0, 2, 3, 1 };//k = 5
-            subArraySumDividedByK = new int[] { 4, 5, 0, -2, -3, 1 };//k = 5
-            Console.WriteLine("Count all sub-arrays having sum divisible by k: " + mapAndSet.CountAllSubarraysHavingSumDivisibleByK(subArraySumDividedByK, 5));
-            #endregion
-
-            #region Group Anagrams
-            string[] groupAnagrams = new string[] { "abab", "baba", "aabb", "abbc" };
-            groupAnagrams = new string[] { "cat", "dog", "tac", "god", "act" };
-            groupAnagrams = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
-            Console.WriteLine("Group Anagrams: " + mapAndSet.GroupAnagrams(groupAnagrams));
+            TwoPointers twoPointers = new TwoPointers();
+            #region pairSum
+            int[] pairSum = new int[] { 1, 5, 7, -1 }; int k = 6;
+            pairSum = new int[] { 1, 5, 7, -1, 5 }; k = 6;
+            pairSum = new int[] { 1, 1, 1, 1 }; k = 2;
+            pairSum = new int[] { 10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1 }; k = 11;
+            Console.WriteLine("Pair Sum: " + twoPointers.PairSum(pairSum, k));
             #endregion
 
             #endregion
