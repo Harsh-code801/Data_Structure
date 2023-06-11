@@ -186,7 +186,12 @@ namespace DataStructure
             Console.WriteLine("Container With Most Water: " + twoPointers.containerWithMostWater(containerWithMostWater));
             #endregion
 
-
+            #region Is SubSequence
+            string str1 = "AXY", str2 = "YADXCP";
+            str1 = "AXY";str2 = "ADXCPY";
+            str1 = "gksrek"; str2 = "geeksforgeeks";
+            Console.WriteLine($"Is {str1} is Subsequence of {str2} = " + twoPointers.IsSubSequence(str1, str2));
+            #endregion
             #endregion
         }
     }

@@ -36,6 +36,30 @@ namespace Data_Structure.Two_Pointers
             Console.WriteLine("Max Water Capicity With Pol Between " + result.Value);
             return result.Key;
         }
+
+        public bool IsSubSequence(string str1, string str2)
+        {
+            if (str1.Length == 0)
+                return true;
+            if (str2.Length == 0)
+                return false;
+
+            int secondLoopStartingWith = 0;
+            int matchCount = 0;
+            for (int i = 0; i < str1.Length; i++)
+            {
+                for (int j = secondLoopStartingWith; j < str2.Length; j++)
+                {
+                    if (str1[i] == str2[j])
+                    {
+                        secondLoopStartingWith = j + 1;
+                        matchCount++;
+                        break;
+                    }
+                }
+            }
+            return matchCount == str1.Length;
+        }
         private void DisplayKeyValuePairList(List<KeyValuePair<int, int>> lst)
         {
             Console.WriteLine("========================================");
