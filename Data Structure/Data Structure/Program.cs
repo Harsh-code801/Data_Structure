@@ -198,7 +198,7 @@ namespace DataStructure
             BasicAlgorithms basicAlgorithms = new BasicAlgorithms();
 
             #region Insertion Sort
-            int []insertionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
+            int[] insertionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
             basicAlgorithms.InsertionSort(insertionSort);
             #endregion
 
