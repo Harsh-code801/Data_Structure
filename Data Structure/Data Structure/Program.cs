@@ -1,4 +1,5 @@
 ﻿using Data_Structure.Arrays;
+using Data_Structure.Basic_Algorithm;
 using Data_Structure.Map_And_Set;
 using Data_Structure.Multi_Dimensional_Array;
 using Data_Structure.Two_Pointers;
@@ -167,32 +168,42 @@ namespace DataStructure
                 #endregion
 
                 #endregion
+
+                #region Two Pointers
+
+                TwoPointers twoPointers = new TwoPointers();
+                #region pairSum
+                int[] pairSum = new int[] { 1, 5, 7, -1 }; int k = 6;
+                pairSum = new int[] { 1, 5, 7, -1, 5 }; k = 6;
+                pairSum = new int[] { 1, 1, 1, 1 }; k = 2;
+                pairSum = new int[] { 10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1 }; k = 11;
+                Console.WriteLine("Pair Sum: " + twoPointers.PairSum(pairSum, k));
+                #endregion
+
+                #region Container With Most Water
+                int[] containerWithMostWater = new int[] { 1, 5, 4, 3 };
+                containerWithMostWater = new int[] { 3, 1, 2, 4, 5 };
+                Console.WriteLine("Container With Most Water: " + twoPointers.containerWithMostWater(containerWithMostWater));
+                #endregion
+
+                #region Is SubSequence
+                string str1 = "AXY", str2 = "YADXCP";
+                str1 = "AXY"; str2 = "ADXCPY";
+                str1 = "gksrek"; str2 = "geeksforgeeks";
+                Console.WriteLine($"Is {str1} is Subsequence of {str2} = " + twoPointers.IsSubSequence(str1, str2));
+                #endregion
+                #endregion
             }
+            #region Basic Algorithm
+            BasicAlgorithms basicAlgorithms = new BasicAlgorithms();
 
-            #region Two Pointers
-
-            TwoPointers twoPointers = new TwoPointers();
-            #region pairSum
-            int[] pairSum = new int[] { 1, 5, 7, -1 }; int k = 6;
-            pairSum = new int[] { 1, 5, 7, -1, 5 }; k = 6;
-            pairSum = new int[] { 1, 1, 1, 1 }; k = 2;
-            pairSum = new int[] { 10, 12, 10, 15, -1, 7, 6, 5, 4, 2, 1, 1, 1 }; k = 11;
-            Console.WriteLine("Pair Sum: " + twoPointers.PairSum(pairSum, k));
+            #region InsertionSort
+            int []insertionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
+            basicAlgorithms.InsertionSort(insertionSort);
             #endregion
 
-            #region Container With Most Water
-            int[] containerWithMostWater = new int[] { 1, 5, 4, 3 };
-            containerWithMostWater = new int[] { 3, 1, 2, 4, 5 };
-            Console.WriteLine("Container With Most Water: " + twoPointers.containerWithMostWater(containerWithMostWater));
             #endregion
 
-            #region Is SubSequence
-            string str1 = "AXY", str2 = "YADXCP";
-            str1 = "AXY";str2 = "ADXCPY";
-            str1 = "gksrek"; str2 = "geeksforgeeks";
-            Console.WriteLine($"Is {str1} is Subsequence of {str2} = " + twoPointers.IsSubSequence(str1, str2));
-            #endregion
-            #endregion
         }
     }
 }
