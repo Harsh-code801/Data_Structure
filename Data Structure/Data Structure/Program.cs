@@ -212,6 +212,16 @@ namespace DataStructure
             basicAlgorithms.BubbleSort(bubbleSort);
             #endregion
 
+            #region Kadane's Algorithm
+            int[] kadanisAlgorithm = new int[] { -2, -3, 4, -1, -2, 1, 5, -3 };
+            basicAlgorithms.kadanisAlgorithm(kadanisAlgorithm);
+            #endregion
+
+            #region Dutch National Flag Algorithm
+            int[] datchNationalFlagAlgorithm = new int[] { 0, 1, 1, 0, 0, 2, 1, 2, 1 };// Array contains only 0, 1, 2
+            basicAlgorithms.DatchNationalFlagAlgorithm(datchNationalFlagAlgorithm);
+            #endregion
+
             #endregion
 
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,7 +47,7 @@ namespace Data_Structure.Basic_Algorithm
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length -i - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
@@ -57,7 +58,55 @@ namespace Data_Structure.Basic_Algorithm
                 }
             }
 
-            Console.WriteLine("Bubble Sort: "+string.Join(", ", arr));
+            Console.WriteLine("Bubble Sort: " + string.Join(", ", arr));
+        }
+        public void kadanisAlgorithm(int[] arr)
+        {
+            int min = int.MinValue, max = 0;
+            int s = 0, start = 0, end = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                max = max + arr[i];
+                if (min < max)
+                {
+                    min = max;
+                    start = s;
+                    end = i;
+                }
+                if (max < 0)
+                {
+                    max = 0;
+                    s++;
+                }
+            }
+            Console.WriteLine("Input: " + string.Join(", ", arr));
+            Console.WriteLine("Max sum Is " + min + " With Rage of " + start + " - " + end);
+        }
+        public void DatchNationalFlagAlgorithm(int[] arr)
+        {
+            Console.WriteLine("Input: " + string.Join(", ", arr));
+            int lo = 0, mid = 0, max = arr.Length - 1;
+            while (mid <= max)
+            {
+                if (arr[mid] == 0)
+                {
+                    int temp = arr[mid];
+                    arr[mid] = arr[lo];
+                    arr[lo] = temp;
+                    lo++;
+                    mid++;
+                }
+                if (arr[mid] == 1)
+                    mid++;
+                if (arr[mid] == 2)
+                {
+                    int temp = arr[mid];
+                    arr[mid] = arr[max];
+                    arr[max] = temp;
+                    max--;
+                }
+            }
+            Console.WriteLine("Datch National Flag Algorithm: " + string.Join(", ", arr));
         }
     }
 }
