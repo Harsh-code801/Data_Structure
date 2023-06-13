@@ -222,6 +222,12 @@ namespace DataStructure
             basicAlgorithms.DatchNationalFlagAlgorithm(datchNationalFlagAlgorithm);
             #endregion
 
+            #region Majority element ( Moore Voting Algorithm)
+            int[] majorityElement = new int[] { 0, 1, 1, 0, 0, 1, 1, 2, 1 };
+            majorityElement = new int[] { 2, 3, 9, 2, 2 };
+            basicAlgorithms.MooreWatingAlgorithm(majorityElement);
+            #endregion
+
             #endregion
 
         }

@@ -42,6 +42,7 @@ namespace Data_Structure.Basic_Algorithm
                 arr[i] = temp;
             }
             Console.WriteLine("Selection Sort: " + string.Join(", ", arr));
+            Console.WriteLine("=====================================");
         }
         public void BubbleSort(int[] arr)
         {
@@ -59,6 +60,7 @@ namespace Data_Structure.Basic_Algorithm
             }
 
             Console.WriteLine("Bubble Sort: " + string.Join(", ", arr));
+            Console.WriteLine("=====================================");
         }
         public void kadanisAlgorithm(int[] arr)
         {
@@ -81,6 +83,7 @@ namespace Data_Structure.Basic_Algorithm
             }
             Console.WriteLine("Input: " + string.Join(", ", arr));
             Console.WriteLine("Max sum Is " + min + " With Rage of " + start + " - " + end);
+            Console.WriteLine("=====================================");
         }
         public void DatchNationalFlagAlgorithm(int[] arr)
         {
@@ -107,6 +110,32 @@ namespace Data_Structure.Basic_Algorithm
                 }
             }
             Console.WriteLine("Datch National Flag Algorithm: " + string.Join(", ", arr));
+            Console.WriteLine("=====================================");
+        }
+
+        public void MooreWatingAlgorithm(int[] arr)
+        {
+            int index = -1, maxSum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int count = 0;
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (arr[i] == arr[j])
+                        count++;
+                }
+                if (count > maxSum)
+                {
+                    maxSum = count;
+                    index = i;
+                }
+            }
+            if (maxSum > arr.Length / 2)
+                Console.WriteLine("Majority Element: " + arr[index]);
+            else
+                Console.WriteLine("No Majority Element Found");
+
+            Console.WriteLine("=====================================");
         }
     }
 }
