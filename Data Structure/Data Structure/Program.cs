@@ -2,6 +2,7 @@
 using Data_Structure.Basic_Algorithm;
 using Data_Structure.Map_And_Set;
 using Data_Structure.Multi_Dimensional_Array;
+using Data_Structure.Problems;
 using Data_Structure.Two_Pointers;
 using System;
 
@@ -193,39 +194,57 @@ namespace DataStructure
                 Console.WriteLine($"Is {str1} is Subsequence of {str2} = " + twoPointers.IsSubSequence(str1, str2));
                 #endregion
                 #endregion
+
+                #region Basic Algorithm
+                BasicAlgorithms basicAlgorithms = new BasicAlgorithms();
+
+                #region Insertion Sort
+                int[] insertionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
+                basicAlgorithms.InsertionSort(insertionSort);
+                #endregion
+
+                #region Selection Sort
+                int[] selectionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
+                basicAlgorithms.SelectionSort(selectionSort);
+                #endregion
+
+                #region Bubble Sort
+                int[] bubbleSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
+                basicAlgorithms.BubbleSort(bubbleSort);
+                #endregion
+
+                #region Kadane's Algorithm
+                int[] kadanisAlgorithm = new int[] { -2, -3, 4, -1, -2, 1, 5, -3 };
+                basicAlgorithms.kadanisAlgorithm(kadanisAlgorithm);
+                #endregion
+
+                #region Dutch National Flag Algorithm
+                int[] datchNationalFlagAlgorithm = new int[] { 0, 1, 1, 0, 0, 2, 1, 2, 1 };// Array contains only 0, 1, 2
+                basicAlgorithms.DatchNationalFlagAlgorithm(datchNationalFlagAlgorithm);
+                #endregion
+
+                #region Majority element ( Moore Voting Algorithm)
+                int[] majorityElement = new int[] { 0, 1, 1, 0, 0, 1, 1, 2, 1 };
+                majorityElement = new int[] { 2, 3, 9, 2, 2 };
+                basicAlgorithms.MooreWatingAlgorithm(majorityElement);
+                #endregion
+
+                #endregion
             }
-            #region Basic Algorithm
-            BasicAlgorithms basicAlgorithms = new BasicAlgorithms();
+            #region Problem Solving
+            ProblemsSolving problemsSolving = new ProblemsSolving();
 
-            #region Insertion Sort
-            int[] insertionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
-            basicAlgorithms.InsertionSort(insertionSort);
+            #region Check Permutation
+            string string1 = "listen", string2 = "silent";
+            string1 = "asspl"; string2 = "appsl";
+            Console.WriteLine("Is Permutation: " + problemsSolving.CheckPermutation(string1, string2));
             #endregion
 
-            #region Selection Sort
-            int[] selectionSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
-            basicAlgorithms.SelectionSort(selectionSort);
-            #endregion
-
-            #region Bubble Sort
-            int[] bubbleSort = new int[] { 4, 3, 2, 10, 12, 1, 5, 6, 25 };
-            basicAlgorithms.BubbleSort(bubbleSort);
-            #endregion
-
-            #region Kadane's Algorithm
-            int[] kadanisAlgorithm = new int[] { -2, -3, 4, -1, -2, 1, 5, -3 };
-            basicAlgorithms.kadanisAlgorithm(kadanisAlgorithm);
-            #endregion
-
-            #region Dutch National Flag Algorithm
-            int[] datchNationalFlagAlgorithm = new int[] { 0, 1, 1, 0, 0, 2, 1, 2, 1 };// Array contains only 0, 1, 2
-            basicAlgorithms.DatchNationalFlagAlgorithm(datchNationalFlagAlgorithm);
-            #endregion
-
-            #region Majority element ( Moore Voting Algorithm)
-            int[] majorityElement = new int[] { 0, 1, 1, 0, 0, 1, 1, 2, 1 };
-            majorityElement = new int[] { 2, 3, 9, 2, 2 };
-            basicAlgorithms.MooreWatingAlgorithm(majorityElement);
+            #region Intersection Of Array
+            int[] arr1 = new int[] { 4, 1, 5 }, arr2 = new int[] { 3, 4, 5 };
+            arr1 = new int[] { 1, 3, 4, 5, 7 }; arr2 = new int[] { 2, 3, 5, 6 };
+            arr1 = new int[] { 2, 5, 6 }; arr2 = new int[] { 4, 6, 8, 10 };
+            Console.WriteLine("Intersection Of Array: " + problemsSolving.Intersection(arr1, arr2));
             #endregion
 
             #endregion
