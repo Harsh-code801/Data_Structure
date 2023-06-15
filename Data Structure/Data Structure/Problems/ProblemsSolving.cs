@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,21 @@ namespace Data_Structure.Problems
                 }
             }
             return lst.Count > 0 ? string.Join(", ", lst) : "Not found any intersection element";
+        }
+        public string MajorityElementNby3(int[] arr)
+        {
+            List<KeyValuePair<int,int>> lst = new List<KeyValuePair<int,int>>();
+            for(int i = 0; i < arr.Length; i++) 
+            {
+                int count = 0;
+                for(int j = 0; j < arr.Length; j++)
+                {
+                    if (arr[i] == arr[j])
+                        count++;
+                }
+                lst.Add(new KeyValuePair<int, int>(arr[i], count));
+            }
+            return string.Join(", ", lst.DistinctBy(x => x.Key).Where(x => x.Value > arr.Length / 3).ToList().Select(x=>x.Key));
         }
     }
 }

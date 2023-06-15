@@ -247,6 +247,12 @@ namespace DataStructure
             Console.WriteLine("Intersection Of Array: " + problemsSolving.Intersection(arr1, arr2));
             #endregion
 
+            #region majority Element n\2
+            int[] majorityElementNBy3 = new int[] { 3, 2, 2, 1, 5, 2, 3 };
+            majorityElementNBy3 = new int[] { 7, 4, 4, 9, 7 };
+            Console.WriteLine("Majority Element n\\3 : " + problemsSolving.MajorityElementNby3(majorityElementNBy3));
+            #endregion
+
             #endregion
 
         }
