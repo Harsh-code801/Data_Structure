@@ -253,6 +253,10 @@ namespace DataStructure
             Console.WriteLine("Majority Element n\\3 : " + problemsSolving.MajorityElementNby3(majorityElementNBy3));
             #endregion
 
+            #region Rotate Matrix Right by k element
+            int[,] arrayRotateByRight = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };int kmove = 3;
+            problemsSolving.RotateArrayRightByK(arrayRotateByRight, kmove);
+            #endregion
             #endregion
 
         }

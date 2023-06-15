@@ -34,18 +34,49 @@ namespace Data_Structure.Problems
         }
         public string MajorityElementNby3(int[] arr)
         {
-            List<KeyValuePair<int,int>> lst = new List<KeyValuePair<int,int>>();
-            for(int i = 0; i < arr.Length; i++) 
+            List<KeyValuePair<int, int>> lst = new List<KeyValuePair<int, int>>();
+            for (int i = 0; i < arr.Length; i++)
             {
                 int count = 0;
-                for(int j = 0; j < arr.Length; j++)
+                for (int j = 0; j < arr.Length; j++)
                 {
                     if (arr[i] == arr[j])
                         count++;
                 }
                 lst.Add(new KeyValuePair<int, int>(arr[i], count));
             }
-            return string.Join(", ", lst.DistinctBy(x => x.Key).Where(x => x.Value > arr.Length / 3).ToList().Select(x=>x.Key));
+            return string.Join(", ", lst.DistinctBy(x => x.Key).Where(x => x.Value > arr.Length / 3).ToList().Select(x => x.Key));
+        }
+        public void RotateArrayRightByK(int[,] arr, int k)
+        {
+            PrintArray(arr);
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int p = 0; p < k; p++)
+                {
+                    int element = arr[i, 0];
+                    arr[i, 0] = arr[i, arr.GetLength(1) - 1];
+                    for (int j = 1; j < arr.GetLength(1); j++)
+                    {
+                        int temp = arr[i, j];
+                        arr[i, j] = element;
+                        element = temp;
+                    }
+                }
+            }
+            PrintArray(arr);
+        }
+        private void PrintArray(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("=======================================");
         }
     }
 }
