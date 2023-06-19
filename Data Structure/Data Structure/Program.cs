@@ -234,6 +234,7 @@ namespace DataStructure
             #region Problem Solving
             ProblemsSolving problemsSolving = new ProblemsSolving();
 
+#if !DEBUG
             #region Check Permutation
             string string1 = "listen", string2 = "silent";
             string1 = "asspl"; string2 = "appsl";
@@ -254,9 +255,24 @@ namespace DataStructure
             #endregion
 
             #region Rotate Matrix Right by k element
-            int[,] arrayRotateByRight = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } };int kmove = 3;
+            int[,] arrayRotateByRight = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }; int kmove = 3;
             problemsSolving.RotateArrayRightByK(arrayRotateByRight, kmove);
             #endregion
+#endif
+            #region Find K’th Character of Decrypted String
+            string encryptedString = "ab12c3"; int kval = 20;
+            encryptedString = "a2b2c3"; kval = 5;
+            encryptedString = "ab4c2ed3"; kval = 9;
+            //encryptedString = "ab4c12ed3"; kval = 21;
+            encryptedString = "leet2code3"; kval = 10;
+            Console.WriteLine(problemsSolving.FindKCharacterOfDecryptedString(encryptedString, kval));
+            #endregion
+
+            #region Move Zeroes To End
+            int[] move0toEnd = new int[] { 2, 0, 4, 1, 3, 0, 2, 8 };
+            problemsSolving.Move0ToEnd(move0toEnd);
+            #endregion
+
             #endregion
 
         }

@@ -78,5 +78,70 @@ namespace Data_Structure.Problems
             }
             Console.WriteLine("=======================================");
         }
+
+        public string FindKCharacterOfDecryptedString(string encryptedString, int k)
+        {
+            string decrypetedString = string.Empty;
+            string character = string.Empty;
+            string count = string.Empty;
+            for (int i = 0; i < encryptedString.Length; i++)
+            {
+                if (char.IsDigit(encryptedString[i])) 
+                { 
+                    count = string.Concat(count, encryptedString[i]);
+                    string temp = string.Empty;
+                    if(i+1 == encryptedString.Length)
+                    {
+                        for(int j = 0; j < double.Parse(count); j++)
+                        {
+                            temp = temp + character;
+                        }
+                        decrypetedString = string.Concat(decrypetedString, temp);
+                    }
+                        
+                }
+                else if (count == string.Empty)
+                {
+                    character = string.Concat(character, encryptedString[i]);
+                }
+                else
+                {
+                    string temp = string.Empty;
+                    for (int j = 0; j < double.Parse(count); j++)
+                    {
+                        temp = temp + character;
+                    }
+                    decrypetedString = string.Concat(decrypetedString, temp);
+                    count = string.Empty;
+                    character = string.Empty;
+                    i--;
+                }
+            }
+            try
+            {
+                return $"Result {decrypetedString[k-1]}, Decrypted String: {decrypetedString}";
+            }
+            catch (Exception ex)
+            {
+                return $"Can Not Find Character At {k+1} Posation, Decrypted String: {decrypetedString}";
+            }
+        }
+
+        public void Move0ToEnd(int[] input)
+        {
+            for(int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == 0 && i+1 != input.Length)
+                {
+                    for(int j = i + 1; j < input.Length; j++)
+                    {
+                        int temp = input[j];
+                        input[j] = input[j-1];
+                        input[j-1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine(string.Join("",input));
+        }
     }
 }
