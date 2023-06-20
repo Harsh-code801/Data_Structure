@@ -279,7 +279,7 @@ namespace DataStructure
             sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 0 };
             Console.WriteLine("Sum of Two Elements Equals the Third. " + problemsSolving.SumofTwoElementsEqualstheThird(sumOfTwoElement));
             #endregion
-#endif
+
             #region Maximum Sum Circular Subarray
             int[] maxCircularSum = new int[] { 1, 2, -3, -4, 5 };
             maxCircularSum = new int[] { -2, -3, -1 };
@@ -288,6 +288,17 @@ namespace DataStructure
             maxCircularSum = new int[] { 8, -8, 9, -9, 10, -11, 12 };
             Console.WriteLine(problemsSolving.MaximumSumCircularSubarray(maxCircularSum));
             #endregion
+
+#endif
+            #region Longest Consecutive Sequence
+            int[] longestConsecutiveSequence = new int[] { 1, 9, 3, 10, 4, 20, 2 };
+            longestConsecutiveSequence = new int[] { 36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42 };
+            longestConsecutiveSequence = new int[] { 1, 9, 3, 10, 4, 20, 2 };
+            longestConsecutiveSequence = new int[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
+            longestConsecutiveSequence = new int[] { };
+            Console.WriteLine(problemsSolving.LongestConsecutiveSequence(longestConsecutiveSequence));
+            #endregion
+
             #endregion
 
         }

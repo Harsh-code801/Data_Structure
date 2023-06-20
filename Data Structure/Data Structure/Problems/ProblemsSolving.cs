@@ -181,6 +181,52 @@ namespace Data_Structure.Problems
             }
             return maxSum;
         }
+        public string LongestConsecutiveSequence(int[] arr)
+        {
+            int minStartIndex = 0, minEndIndex = 0;
+            int maxStartIndex = 0, maxEndIndex = 0;
+            int maxCount = 1;
+            int count = 1;
+            Array.Sort(arr);
+            if (arr.Length == 1)
+                return arr[0].ToString();
+
+
+            if (arr.Length > 0)
+            {
+                int val = arr[0];
+                for (int i = 1; i < arr.Length; i++)
+                {
+                    if (val + 1 == arr[i])
+                    {
+                        count++;
+                        minEndIndex++;
+                        val = arr[i];
+                    }
+                    else
+                    {
+
+                        minStartIndex = i; minEndIndex = i;
+                        count = 1;
+                        val = arr[i];
+                    }
+                    if (count > maxCount)
+                    {
+                        maxCount = count;
+                        maxStartIndex = minStartIndex;
+                        maxEndIndex = i;
+
+                    }
+                }
+                string longContinusString = string.Empty;
+                for (int i = maxStartIndex; i <= maxEndIndex; i++)
+                {
+                    longContinusString = string.Concat(longContinusString, ",", arr[i]);
+                }
+                return longContinusString.Trim(',');
+            }
+            return "0";
+        }
         private void PrintArray(int[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
