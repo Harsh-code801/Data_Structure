@@ -155,6 +155,32 @@ namespace Data_Structure.Problems
             else
                 return "Not Able to find Pairs";
         }
+        public int MaximumSumCircularSubarray(int[] arr)
+        {
+            int size = arr.Length;
+            int jSize = arr.Length;
+            int maxSum = arr[0];
+            bool secondTry = false;
+            for (int i = 0; i < size; i++)
+            {
+                int sum = 0;
+                for (int j = i; j < jSize; j++)
+                {
+                    sum = sum + arr[j];
+                    if (sum > maxSum)
+                        maxSum = sum;
+                    if (j + 1 == arr.Length && !secondTry)
+                    {
+                        j = -1;
+                        secondTry = true;
+                        jSize = i;
+                    }
+                }
+                secondTry = false;
+                jSize = arr.Length;
+            }
+            return maxSum;
+        }
         private void PrintArray(int[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)

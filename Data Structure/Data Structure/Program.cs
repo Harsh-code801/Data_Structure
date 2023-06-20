@@ -272,12 +272,21 @@ namespace DataStructure
             int[] move0toEnd = new int[] { 2, 0, 4, 1, 3, 0, 2, 8 };
             problemsSolving.Move0ToEnd(move0toEnd);
             #endregion
-#endif
+
             #region Sum of Two Elements Equals the Third.
             int[] sumOfTwoElement = new int[] { 10, 5, 5, 6, 2 };
-            //sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
-            //sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 0 };
+            sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
+            sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 0 };
             Console.WriteLine("Sum of Two Elements Equals the Third. " + problemsSolving.SumofTwoElementsEqualstheThird(sumOfTwoElement));
+            #endregion
+#endif
+            #region Maximum Sum Circular Subarray
+            int[] maxCircularSum = new int[] { 1, 2, -3, -4, 5 };
+            maxCircularSum = new int[] { -2, -3, -1 };
+            maxCircularSum = new int[] { 1, 2, 3, 4 };
+            maxCircularSum = new int[] { -1000000000,-10000};
+            maxCircularSum = new int[] { 8, -8, 9, -9, 10, -11, 12 };
+            Console.WriteLine(problemsSolving.MaximumSumCircularSubarray(maxCircularSum));
             #endregion
             #endregion
 
