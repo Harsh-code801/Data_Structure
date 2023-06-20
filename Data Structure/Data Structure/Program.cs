@@ -258,8 +258,8 @@ namespace DataStructure
             int[,] arrayRotateByRight = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }; int kmove = 3;
             problemsSolving.RotateArrayRightByK(arrayRotateByRight, kmove);
             #endregion
-#endif
-            #region Find K’th Character of Decrypted String
+
+            #region Find K’th Character of Decrypted String (perfomance issue)
             string encryptedString = "ab12c3"; int kval = 20;
             encryptedString = "a2b2c3"; kval = 5;
             encryptedString = "ab4c2ed3"; kval = 9;
@@ -272,7 +272,13 @@ namespace DataStructure
             int[] move0toEnd = new int[] { 2, 0, 4, 1, 3, 0, 2, 8 };
             problemsSolving.Move0ToEnd(move0toEnd);
             #endregion
-
+#endif
+            #region Sum of Two Elements Equals the Third.
+            int[] sumOfTwoElement = new int[] { 10, 5, 5, 6, 2 };
+            //sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
+            //sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 0 };
+            Console.WriteLine("Sum of Two Elements Equals the Third. " + problemsSolving.SumofTwoElementsEqualstheThird(sumOfTwoElement));
+            #endregion
             #endregion
 
         }

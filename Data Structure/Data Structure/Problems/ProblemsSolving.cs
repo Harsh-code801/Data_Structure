@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Data_Structure.Problems
 {
@@ -66,19 +67,6 @@ namespace Data_Structure.Problems
             }
             PrintArray(arr);
         }
-        private void PrintArray(int[,] arr)
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write(arr[i, j] + " ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("=======================================");
-        }
-
         public string FindKCharacterOfDecryptedString(string encryptedString, int k)
         {
             string decrypetedString = string.Empty;
@@ -86,19 +74,19 @@ namespace Data_Structure.Problems
             string count = string.Empty;
             for (int i = 0; i < encryptedString.Length; i++)
             {
-                if (char.IsDigit(encryptedString[i])) 
-                { 
+                if (char.IsDigit(encryptedString[i]))
+                {
                     count = string.Concat(count, encryptedString[i]);
                     string temp = string.Empty;
-                    if(i+1 == encryptedString.Length)
+                    if (i + 1 == encryptedString.Length)
                     {
-                        for(int j = 0; j < double.Parse(count); j++)
+                        for (int j = 0; j < double.Parse(count); j++)
                         {
                             temp = temp + character;
                         }
                         decrypetedString = string.Concat(decrypetedString, temp);
                     }
-                        
+
                 }
                 else if (count == string.Empty)
                 {
@@ -119,29 +107,65 @@ namespace Data_Structure.Problems
             }
             try
             {
-                return $"Result {decrypetedString[k-1]}, Decrypted String: {decrypetedString}";
+                return $"Result {decrypetedString[k - 1]}, Decrypted String: {decrypetedString}";
             }
             catch (Exception ex)
             {
-                return $"Can Not Find Character At {k+1} Posation, Decrypted String: {decrypetedString}";
+                return $"Can Not Find Character At {k + 1} Posation, Decrypted String: {decrypetedString}";
             }
         }
-
         public void Move0ToEnd(int[] input)
         {
-            for(int i = 0; i < input.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] == 0 && i+1 != input.Length)
+                if (input[i] == 0 && i + 1 != input.Length)
                 {
-                    for(int j = i + 1; j < input.Length; j++)
+                    for (int j = i + 1; j < input.Length; j++)
                     {
                         int temp = input[j];
-                        input[j] = input[j-1];
-                        input[j-1] = temp;
+                        input[j] = input[j - 1];
+                        input[j - 1] = temp;
                     }
                 }
             }
-            Console.WriteLine(string.Join("",input));
+            Console.WriteLine(string.Join("", input));
+        }
+        public string SumofTwoElementsEqualstheThird(int[] arr)
+        {
+            List<string> lst = new List<string>();
+            if (arr.Length >= 3)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    for (int j = i+1; j < arr.Length; j++)
+                    {
+                        for (int k = j+1; k < arr.Length; k++)
+                        {
+                            if (arr[i] + arr[j] == arr[k] || arr[j] + arr[k] == arr[i] || arr[i] + arr[k] == arr[j])
+                                lst.Add($"[{arr[i]},{arr[j]},{arr[k]}]");
+                            break;
+                        }
+                        break;
+                    }
+                }
+
+            }
+            if (lst.Count > 0)
+                return string.Join(", ", lst);
+            else
+                return "Not Able to find Pairs";
+        }
+        private void PrintArray(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("=======================================");
         }
     }
 }
