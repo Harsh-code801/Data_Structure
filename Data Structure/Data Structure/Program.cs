@@ -5,6 +5,7 @@ using Data_Structure.Multi_Dimensional_Array;
 using Data_Structure.Problems;
 using Data_Structure.Two_Pointers;
 using System;
+using System.Diagnostics.Metrics;
 
 namespace DataStructure
 {
@@ -234,71 +235,76 @@ namespace DataStructure
             #region Problem Solving
             ProblemsSolving problemsSolving = new ProblemsSolving();
 
-#if !DEBUG
-            #region Check Permutation
-            string string1 = "listen", string2 = "silent";
-            string1 = "asspl"; string2 = "appsl";
-            Console.WriteLine("Is Permutation: " + problemsSolving.CheckPermutation(string1, string2));
-            #endregion
+            if (false)
+            {
+                #region Check Permutation
+                string string1 = "listen", string2 = "silent";
+                string1 = "asspl"; string2 = "appsl";
+                Console.WriteLine("Is Permutation: " + problemsSolving.CheckPermutation(string1, string2));
+                #endregion
 
-            #region Intersection Of Array
-            int[] arr1 = new int[] { 4, 1, 5 }, arr2 = new int[] { 3, 4, 5 };
-            arr1 = new int[] { 1, 3, 4, 5, 7 }; arr2 = new int[] { 2, 3, 5, 6 };
-            arr1 = new int[] { 2, 5, 6 }; arr2 = new int[] { 4, 6, 8, 10 };
-            Console.WriteLine("Intersection Of Array: " + problemsSolving.Intersection(arr1, arr2));
-            #endregion
+                #region Intersection Of Array
+                int[] arr1 = new int[] { 4, 1, 5 }, arr2 = new int[] { 3, 4, 5 };
+                arr1 = new int[] { 1, 3, 4, 5, 7 }; arr2 = new int[] { 2, 3, 5, 6 };
+                arr1 = new int[] { 2, 5, 6 }; arr2 = new int[] { 4, 6, 8, 10 };
+                Console.WriteLine("Intersection Of Array: " + problemsSolving.Intersection(arr1, arr2));
+                #endregion
 
-            #region majority Element n\2
-            int[] majorityElementNBy3 = new int[] { 3, 2, 2, 1, 5, 2, 3 };
-            majorityElementNBy3 = new int[] { 7, 4, 4, 9, 7 };
-            Console.WriteLine("Majority Element n\\3 : " + problemsSolving.MajorityElementNby3(majorityElementNBy3));
-            #endregion
+                #region majority Element n\2
+                int[] majorityElementNBy3 = new int[] { 3, 2, 2, 1, 5, 2, 3 };
+                majorityElementNBy3 = new int[] { 7, 4, 4, 9, 7 };
+                Console.WriteLine("Majority Element n\\3 : " + problemsSolving.MajorityElementNby3(majorityElementNBy3));
+                #endregion
 
-            #region Rotate Matrix Right by k element
-            int[,] arrayRotateByRight = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }; int kmove = 3;
-            problemsSolving.RotateArrayRightByK(arrayRotateByRight, kmove);
-            #endregion
+                #region Rotate Matrix Right by k element
+                int[,] arrayRotateByRight = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 } }; int kmove = 3;
+                problemsSolving.RotateArrayRightByK(arrayRotateByRight, kmove);
+                #endregion
 
-            #region Find K’th Character of Decrypted String (perfomance issue)
-            string encryptedString = "ab12c3"; int kval = 20;
-            encryptedString = "a2b2c3"; kval = 5;
-            encryptedString = "ab4c2ed3"; kval = 9;
-            //encryptedString = "ab4c12ed3"; kval = 21;
-            encryptedString = "leet2code3"; kval = 10;
-            Console.WriteLine(problemsSolving.FindKCharacterOfDecryptedString(encryptedString, kval));
-            #endregion
+                #region Find K’th Character of Decrypted String (perfomance issue)
+                string encryptedString = "ab12c3"; int kval = 20;
+                encryptedString = "a2b2c3"; kval = 5;
+                encryptedString = "ab4c2ed3"; kval = 9;
+                //encryptedString = "ab4c12ed3"; kval = 21;
+                encryptedString = "leet2code3"; kval = 10;
+                Console.WriteLine(problemsSolving.FindKCharacterOfDecryptedString(encryptedString, kval));
+                #endregion
 
-            #region Move Zeroes To End
-            int[] move0toEnd = new int[] { 2, 0, 4, 1, 3, 0, 2, 8 };
-            problemsSolving.Move0ToEnd(move0toEnd);
-            #endregion
+                #region Move Zeroes To End
+                int[] move0toEnd = new int[] { 2, 0, 4, 1, 3, 0, 2, 8 };
+                problemsSolving.Move0ToEnd(move0toEnd);
+                #endregion
 
-            #region Sum of Two Elements Equals the Third.
-            int[] sumOfTwoElement = new int[] { 10, 5, 5, 6, 2 };
-            sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
-            sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 0 };
-            Console.WriteLine("Sum of Two Elements Equals the Third. " + problemsSolving.SumofTwoElementsEqualstheThird(sumOfTwoElement));
-            #endregion
+                #region Sum of Two Elements Equals the Third.
+                int[] sumOfTwoElement = new int[] { 10, 5, 5, 6, 2 };
+                sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 2 };
+                sumOfTwoElement = new int[] { 5, 32, 1, 7, 10, 50, 19, 21, 0 };
+                Console.WriteLine("Sum of Two Elements Equals the Third. " + problemsSolving.SumofTwoElementsEqualstheThird(sumOfTwoElement));
+                #endregion
 
-            #region Maximum Sum Circular Subarray
-            int[] maxCircularSum = new int[] { 1, 2, -3, -4, 5 };
-            maxCircularSum = new int[] { -2, -3, -1 };
-            maxCircularSum = new int[] { 1, 2, 3, 4 };
-            maxCircularSum = new int[] { -1000000000,-10000};
-            maxCircularSum = new int[] { 8, -8, 9, -9, 10, -11, 12 };
-            Console.WriteLine(problemsSolving.MaximumSumCircularSubarray(maxCircularSum));
-            #endregion
+                #region Maximum Sum Circular Subarray
+                int[] maxCircularSum = new int[] { 1, 2, -3, -4, 5 };
+                maxCircularSum = new int[] { -2, -3, -1 };
+                maxCircularSum = new int[] { 1, 2, 3, 4 };
+                maxCircularSum = new int[] { -1000000000, -10000 };
+                maxCircularSum = new int[] { 8, -8, 9, -9, 10, -11, 12 };
+                Console.WriteLine(problemsSolving.MaximumSumCircularSubarray(maxCircularSum));
+                #endregion
 
-#endif
-            #region Longest Consecutive Sequence
-            int[] longestConsecutiveSequence = new int[] { 1, 9, 3, 10, 4, 20, 2 };
-            longestConsecutiveSequence = new int[] { 36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42 };
-            longestConsecutiveSequence = new int[] { 1, 9, 3, 10, 4, 20, 2 };
-            longestConsecutiveSequence = new int[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
-            longestConsecutiveSequence = new int[] { };
-            Console.WriteLine(problemsSolving.LongestConsecutiveSequence(longestConsecutiveSequence));
+                #region Longest Consecutive Sequence
+                int[] longestConsecutiveSequence = new int[] { 1, 9, 3, 10, 4, 20, 2 };
+                longestConsecutiveSequence = new int[] { 36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42 };
+                longestConsecutiveSequence = new int[] { 1, 9, 3, 10, 4, 20, 2 };
+                longestConsecutiveSequence = new int[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
+                longestConsecutiveSequence = new int[] { };
+                Console.WriteLine(problemsSolving.LongestConsecutiveSequence(longestConsecutiveSequence));
+                #endregion
+            }
+            #region Maximum subarray sum after K
+            int[] MaximumsubarraysumafterK = new int[] { -1, -2, -3 }; int kmaxsum = 3;
+            MaximumsubarraysumafterK = new int[] {-1,10,20 };kmaxsum = 2;
+            Console.WriteLine(problemsSolving.MaximumsubarraysumafterK(MaximumsubarraysumafterK, kmaxsum));
             #endregion
-
             #endregion
 
         }

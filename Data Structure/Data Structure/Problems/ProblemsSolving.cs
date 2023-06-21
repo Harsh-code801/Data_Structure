@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -238,6 +239,35 @@ namespace Data_Structure.Problems
                 Console.WriteLine();
             }
             Console.WriteLine("=======================================");
+        }
+
+        public int MaximumsubarraysumafterK(int[] arr,int k)
+        {
+            int[] arr2 = new int[] { };
+            for(int i = 0; i < k; i++)
+            {
+                arr2 = arr2.Concat(arr).ToArray();
+            }
+            //Kadani's Algorithm
+            int min = int.MinValue, max = 0;
+            int s = 0, start = 0, end = 0;
+            for(int i = 0; i < arr2.Length; i++)
+            {
+                max = max + arr2[i];
+                if (max > min)
+                {
+                    min = max;
+                    start = s;
+                    end = i;
+                }
+                if (max < 0)
+                {
+                    max = 0;
+                    s++;
+                }
+            }
+            return min;
+            
         }
     }
 }
