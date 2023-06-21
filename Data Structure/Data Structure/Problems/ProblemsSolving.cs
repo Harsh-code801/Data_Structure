@@ -270,11 +270,9 @@ namespace Data_Structure.Problems
         }
         public string StringCalculater(string str1, string str2)
         {
-            if (str1.Length == str2.Length)
-            {
-
-            }
-            else if (str2.Length > str1.Length)
+            if (str1 == "0" || str2 == "0")
+                return "0";
+            if (str1.Length != str2.Length && str2.Length > str1.Length)
             {
                 string temp = str2;
                 str2 = str1;
@@ -283,11 +281,12 @@ namespace Data_Structure.Problems
             int[] arr1 = str1.ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
             int[] arr2 = str2.ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
             List<string> additionString = new List<string>();
+            //Multiply
             for (int i = 0; i < arr2.Length; i++)// small length
             {
                 int vaddi = 0;
                 string additionStringForOne = new string('0', arr2.Length - 1 - i);
-                for (int j = arr1.Length - 1; j >= 0; j--)
+                for (int j = arr1.Length - 1; j >= 0; j--)//Long Lengtth
                 {
                     string temp = (arr2[i] * arr1[j] + vaddi).ToString();
                     if (temp.Length > 1)
@@ -301,6 +300,7 @@ namespace Data_Structure.Problems
             int vaddiforAdd = 0;
             string result = string.Empty;
             int maxLength = additionString.Max(x => x.Length);
+            //addition
             for (int i = 0; i < maxLength; i++)
             {
                 List<int> Column = new List<int>();
@@ -317,10 +317,7 @@ namespace Data_Structure.Problems
                     vaddiforAdd = 0;
                 result = (i+1 == maxLength?vaddiforAdd + temp[temp.Length - 1].ToString(): temp[temp.Length - 1].ToString()) + result;
             }
-            if (result.Select(x => x == '0').Where(x => x == true).Count() == result.Length)
-                result = "0";
-            else
-                result = result.TrimStart('0');
+            result = result.TrimStart('0');
             return result;
         }
     }
