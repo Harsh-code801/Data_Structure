@@ -138,9 +138,9 @@ namespace Data_Structure.Problems
             {
                 for (int i = 0; i < arr.Length; i++)
                 {
-                    for (int j = i+1; j < arr.Length; j++)
+                    for (int j = i + 1; j < arr.Length; j++)
                     {
-                        for (int k = j+1; k < arr.Length; k++)
+                        for (int k = j + 1; k < arr.Length; k++)
                         {
                             if (arr[i] + arr[j] == arr[k] || arr[j] + arr[k] == arr[i] || arr[i] + arr[k] == arr[j])
                                 lst.Add($"[{arr[i]},{arr[j]},{arr[k]}]");
@@ -240,18 +240,17 @@ namespace Data_Structure.Problems
             }
             Console.WriteLine("=======================================");
         }
-
-        public int MaximumsubarraysumafterK(int[] arr,int k)
+        public int MaximumsubarraysumafterK(int[] arr, int k)
         {
             int[] arr2 = new int[] { };
-            for(int i = 0; i < k; i++)
+            for (int i = 0; i < k; i++)
             {
                 arr2 = arr2.Concat(arr).ToArray();
             }
             //Kadani's Algorithm
             int min = int.MinValue, max = 0;
             int s = 0, start = 0, end = 0;
-            for(int i = 0; i < arr2.Length; i++)
+            for (int i = 0; i < arr2.Length; i++)
             {
                 max = max + arr2[i];
                 if (max > min)
@@ -267,7 +266,62 @@ namespace Data_Structure.Problems
                 }
             }
             return min;
-            
+
+        }
+        public string StringCalculater(string str1, string str2)
+        {
+            if (str1.Length == str2.Length)
+            {
+
+            }
+            else if (str2.Length > str1.Length)
+            {
+                string temp = str2;
+                str2 = str1;
+                str1 = temp;
+            }
+            int[] arr1 = str1.ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
+            int[] arr2 = str2.ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
+            List<string> additionString = new List<string>();
+            for (int i = 0; i < arr2.Length; i++)// small length
+            {
+                int vaddi = 0;
+                string additionStringForOne = new string('0', arr2.Length - 1 - i);
+                for (int j = arr1.Length - 1; j >= 0; j--)
+                {
+                    string temp = (arr2[i] * arr1[j] + vaddi).ToString();
+                    if (temp.Length > 1)
+                        vaddi = int.Parse(temp) / 10;
+                    else
+                        vaddi = 0;
+                    additionStringForOne = temp[temp.Length - 1].ToString() + additionStringForOne;
+                }
+                additionString.Add(vaddi != 0 ? vaddi + additionStringForOne : additionStringForOne);
+            }
+            int vaddiforAdd = 0;
+            string result = string.Empty;
+            int maxLength = additionString.Max(x => x.Length);
+            for (int i = 0; i < maxLength; i++)
+            {
+                List<int> Column = new List<int>();
+                foreach (var sumString in additionString)
+                {
+                    if (sumString.Length - 1 - i >= 0)
+                        Column.Add(int.Parse(sumString[sumString.Length - 1 - i].ToString()));
+                }
+                Column.Add(vaddiforAdd);
+                string temp = Column.Sum(x => x).ToString();
+                if (temp.Length > 1)
+                    vaddiforAdd = int.Parse(temp) / 10;
+                else
+                    vaddiforAdd = 0;
+                result = (i+1 == maxLength?vaddiforAdd + temp[temp.Length - 1].ToString(): temp[temp.Length - 1].ToString()) + result;
+            }
+            if (result.Select(x => x == '0').Where(x => x == true).Count() == result.Length)
+                result = "0";
+            else
+                result = result.TrimStart('0');
+            return result;
         }
     }
 }

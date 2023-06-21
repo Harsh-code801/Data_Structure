@@ -299,12 +299,21 @@ namespace DataStructure
                 longestConsecutiveSequence = new int[] { };
                 Console.WriteLine(problemsSolving.LongestConsecutiveSequence(longestConsecutiveSequence));
                 #endregion
+            
+                #region Maximum subarray sum after K
+                int[] MaximumsubarraysumafterK = new int[] { -1, -2, -3 }; int kmaxsum = 3;
+                MaximumsubarraysumafterK = new int[] {-1,10,20 };kmaxsum = 2;
+                Console.WriteLine(problemsSolving.MaximumsubarraysumafterK(MaximumsubarraysumafterK, kmaxsum));
+                #endregion
             }
-            #region Maximum subarray sum after K
-            int[] MaximumsubarraysumafterK = new int[] { -1, -2, -3 }; int kmaxsum = 3;
-            MaximumsubarraysumafterK = new int[] {-1,10,20 };kmaxsum = 2;
-            Console.WriteLine(problemsSolving.MaximumsubarraysumafterK(MaximumsubarraysumafterK, kmaxsum));
+            #region Multiply Strings (large string)
+            string strVal1 = "4154", strVal2= "51454";
+            strVal1 = "654154154151454545415415454"; strVal2= "63516561563156316545145146514654";
+            strVal1 = "654154154151454545415415454"; strVal2= "0";
+            strVal1 = "140"; strVal2= "721";
+            Console.WriteLine(problemsSolving.StringCalculater(strVal1, strVal2));
             #endregion
+
             #endregion
 
         }
