@@ -305,13 +305,21 @@ namespace DataStructure
                 MaximumsubarraysumafterK = new int[] {-1,10,20 };kmaxsum = 2;
                 Console.WriteLine(problemsSolving.MaximumsubarraysumafterK(MaximumsubarraysumafterK, kmaxsum));
                 #endregion
+            
+                #region Multiply Strings (large string)
+                string strVal1 = "4154", strVal2= "51454";
+                strVal1 = "654154154151454545415415454"; strVal2= "63516561563156316545145146514654";
+                strVal1 = "654154154151454545415415454"; strVal2= "0";
+                strVal1 = "140"; strVal2= "721";
+                Console.WriteLine(problemsSolving.StringCalculater(strVal1, strVal2));
+                #endregion
             }
-            #region Multiply Strings (large string)
-            string strVal1 = "4154", strVal2= "51454";
-            strVal1 = "654154154151454545415415454"; strVal2= "63516561563156316545145146514654";
-            strVal1 = "654154154151454545415415454"; strVal2= "0";
-            strVal1 = "140"; strVal2= "721";
-            Console.WriteLine(problemsSolving.StringCalculater(strVal1, strVal2));
+            #region Missing and repeating numbers
+            int[] missingAndRepeating = new int[] { 6, 4, 3, 5, 5, 1 };
+            missingAndRepeating = new int[] { 4, 3, 6, 2, 1, 1 };
+            missingAndRepeating = new int[] { 3, 1, 3 };
+            missingAndRepeating = new int[] { 2, 4, 3, 5, 5, 1 };
+            Console.WriteLine(problemsSolving.Missingandrepeatingnumbers(missingAndRepeating));
             #endregion
 
             #endregion

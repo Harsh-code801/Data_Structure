@@ -315,10 +315,38 @@ namespace Data_Structure.Problems
                     vaddiforAdd = int.Parse(temp) / 10;
                 else
                     vaddiforAdd = 0;
-                result = (i+1 == maxLength?vaddiforAdd + temp[temp.Length - 1].ToString(): temp[temp.Length - 1].ToString()) + result;
+                result = (i + 1 == maxLength ? vaddiforAdd + temp[temp.Length - 1].ToString() : temp[temp.Length - 1].ToString()) + result;
             }
             result = result.TrimStart('0');
             return result;
+        }
+        public string Missingandrepeatingnumbers(int[] arr)
+        {
+            Array.Sort(arr);
+            int duplicate = -1;
+            int missing = -1;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i + 1 != arr.Length)
+                {
+                    if (arr[i] == arr[i + 1])
+                    {
+                        duplicate = arr[i];
+                        break;
+                    }
+                }
+            }
+            int[] arr2 = arr.Distinct().ToArray();
+            for (int j = 0; j < arr2.Length - 1; j++)
+            {
+                if (arr2[j] + 1 != arr2[j + 1])
+                {
+                    missing = arr2[j] + 1;
+                }
+            }
+            if (missing == -1 && arr2.Length + 1 == arr.Length)
+                missing = arr2[arr2.Length - 1] + 1;
+            return $"Meesing Number: {missing}, Duplicate Number: {duplicate}";
         }
     }
 }
