@@ -327,15 +327,21 @@ namespace DataStructure
                 sumoffourelement = new int[] { 2, 2, 2, 2, 2 }; x = 8;
                 problemsSolving.FindFourElementsThatSumsToAGivenValue(sumoffourelement, x);
                 #endregion
-            }
-            #region Count All Subarrays With Given Sum
-            int[] subarraywithsum = new int[] { 3, 1, 2, 4 };int kofsum = 6;
-            subarraywithsum = new int[] { 10, 2, -2, -20, 10 };kofsum = -10;
-            subarraywithsum = new int[] { 9, 4, 20, 3, 10, 5 };kofsum = 33;
-            subarraywithsum = new int[] { 1,-1,0};kofsum = 0;
-            Console.WriteLine("Count All Subarrays With Given Sum : "+ problemsSolving.CountAllSubarraysWithGivenSum(subarraywithsum, kofsum));
-            #endregion
 
+                #region Count All Subarrays With Given Sum
+                int[] subarraywithsum = new int[] { 3, 1, 2, 4 }; int kofsum = 6;
+                subarraywithsum = new int[] { 10, 2, -2, -20, 10 }; kofsum = -10;
+                subarraywithsum = new int[] { 9, 4, 20, 3, 10, 5 }; kofsum = 33;
+                subarraywithsum = new int[] { 1, -1, 0 }; kofsum = 0;
+                Console.WriteLine("Count All Subarrays With Given Sum : " + problemsSolving.CountAllSubarraysWithGivenSum(subarraywithsum, kofsum));
+                #endregion
+            }
+
+            #region Find nth elements of spiral matrix
+            int[,] nElementInSpiral = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };int find = 6;
+            nElementInSpiral = new int[,] { {1, 2, 3, 4, 5, 6},{7, 8, 9, 10, 11, 12},{13, 14, 15, 16, 17, 18} };find = 17;
+            Console.WriteLine($"\nValue at Index {find} Is {problemsSolving.Findnthelementsofspiralmatrix(nElementInSpiral, find)}");
+            #endregion
             #endregion
 
         }

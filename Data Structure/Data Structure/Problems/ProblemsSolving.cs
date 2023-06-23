@@ -386,5 +386,43 @@ namespace Data_Structure.Problems
             }
             return subArrayCount;
         }
+        public int Findnthelementsofspiralmatrix(int [,]arr, int find)
+        {
+            int counter = 0;
+            int left = 0,right = arr.GetLength(1),up=0,down=arr.GetLength(0);
+            for (int i = 0; i < down && left != right && up != down; i++)
+            {
+                for (int j = left; j < right; j++)
+                {
+                    ++counter;
+                    if (counter == find)
+                        return arr[up, j];
+                    Console.Write(", "+arr[up, j]);
+                }
+                for(int k = up+1; k < down; k++)
+                {
+                    ++counter;
+                    if (counter == find)
+                        return arr[k, right - 1];
+                    Console.Write(", "+arr[k, right-1]);
+                }
+                for(int l = right - 2; l > left; l--)
+                {
+                    ++counter;
+                    if (counter == find)
+                        return arr[down - 1, l];
+                    Console.Write(", " + arr[down-1, l]);
+                }
+                for(int m = down - 1; m > up; m--)
+                {
+                    ++counter;
+                    if (counter == find)
+                        return arr[m, left];
+                    Console.Write(", " + arr[m, left]);
+                }
+                left++;right--;up++;down--;
+            }
+            return 0;
+        }
     }
 }
