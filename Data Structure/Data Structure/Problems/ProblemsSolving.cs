@@ -348,5 +348,43 @@ namespace Data_Structure.Problems
                 missing = arr2[arr2.Length - 1] + 1;
             return $"Meesing Number: {missing}, Duplicate Number: {duplicate}";
         }
+        public void FindFourElementsThatSumsToAGivenValue(int[] arr, int find)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    for (int k = j + 1; k < arr.Length; k++)
+                    {
+                        for (int l = k + 1; l < arr.Length; l++)
+                        {
+                            if (arr[i] + arr[j] + arr[k] + arr[l] == find)
+                            {
+                                Console.WriteLine($"{arr[i]}, {arr[j]}, {arr[k]}, {arr[l]} : index of {i}, {j}, {k}, {l}");
+                            }
+                               
+                        }
+                    }
+                }
+            }
+        }
+        public int CountAllSubarraysWithGivenSum(int[] arr,int k)
+        {
+            int subArrayCount = 0;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                int sum = 0;
+                for(int j = i; j < arr.Length; j++)
+                {
+                    sum += arr[j];
+                    if (sum == k)
+                    {
+                        subArrayCount++;
+                        //break;
+                    }
+                }
+            }
+            return subArrayCount;
+        }
     }
 }

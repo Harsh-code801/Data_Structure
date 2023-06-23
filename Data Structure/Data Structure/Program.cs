@@ -313,13 +313,27 @@ namespace DataStructure
                 strVal1 = "140"; strVal2= "721";
                 Console.WriteLine(problemsSolving.StringCalculater(strVal1, strVal2));
                 #endregion
+
+                #region Missing and repeating numbers
+                int[] missingAndRepeating = new int[] { 6, 4, 3, 5, 5, 1 };
+                missingAndRepeating = new int[] { 4, 3, 6, 2, 1, 1 };
+                missingAndRepeating = new int[] { 3, 1, 3 };
+                missingAndRepeating = new int[] { 2, 4, 3, 5, 5, 1 };
+                Console.WriteLine(problemsSolving.Missingandrepeatingnumbers(missingAndRepeating));
+                #endregion
+
+                #region Find Four Elements That Sums To A Given Value
+                int[] sumoffourelement = new int[] { 10, 2, 3, 4, 5, 9, 7, 8 }; int x = 23;
+                sumoffourelement = new int[] { 2, 2, 2, 2, 2 }; x = 8;
+                problemsSolving.FindFourElementsThatSumsToAGivenValue(sumoffourelement, x);
+                #endregion
             }
-            #region Missing and repeating numbers
-            int[] missingAndRepeating = new int[] { 6, 4, 3, 5, 5, 1 };
-            missingAndRepeating = new int[] { 4, 3, 6, 2, 1, 1 };
-            missingAndRepeating = new int[] { 3, 1, 3 };
-            missingAndRepeating = new int[] { 2, 4, 3, 5, 5, 1 };
-            Console.WriteLine(problemsSolving.Missingandrepeatingnumbers(missingAndRepeating));
+            #region Count All Subarrays With Given Sum
+            int[] subarraywithsum = new int[] { 3, 1, 2, 4 };int kofsum = 6;
+            subarraywithsum = new int[] { 10, 2, -2, -20, 10 };kofsum = -10;
+            subarraywithsum = new int[] { 9, 4, 20, 3, 10, 5 };kofsum = 33;
+            subarraywithsum = new int[] { 1,-1,0};kofsum = 0;
+            Console.WriteLine("Count All Subarrays With Given Sum : "+ problemsSolving.CountAllSubarraysWithGivenSum(subarraywithsum, kofsum));
             #endregion
 
             #endregion
