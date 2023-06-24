@@ -4,6 +4,7 @@ using Data_Structure.Basic_DSA.Map_And_Set;
 using Data_Structure.Basic_DSA.Multi_Dimensional_Array;
 using Data_Structure.Basic_DSA.Problems;
 using Data_Structure.Basic_DSA.Two_Pointers;
+using Data_Structure.Intermediate_DSA.Binary_Search;
 
 namespace DataStructure
 {
@@ -332,8 +333,8 @@ namespace DataStructure
             #endregion
 
             #region Find nth elements of spiral matrix
-            int[,] nElementInSpiral = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };int find = 6;
-            nElementInSpiral = new int[,] { {1, 2, 3, 4, 5, 6},{7, 8, 9, 10, 11, 12},{13, 14, 15, 16, 17, 18} };find = 17;
+            int[,] nElementInSpiral = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } }; int find = 6;
+            nElementInSpiral = new int[,] { { 1, 2, 3, 4, 5, 6 }, { 7, 8, 9, 10, 11, 12 }, { 13, 14, 15, 16, 17, 18 } }; find = 17;
             Console.WriteLine($"\nValue at Index {find} Is {problemsSolving.Findnthelementsofspiralmatrix(nElementInSpiral, find)}");
             #endregion
 
@@ -342,7 +343,18 @@ namespace DataStructure
         }
         static void Main(string[] args)
         {
+            #region Binary Search
 
+            BinarySearch binarySearch = new BinarySearch();
+
+            #region Square Root
+            int squareRoot = 11;
+            squareRoot = 8;
+            squareRoot = 15;
+            Console.WriteLine($"Square Root of {squareRoot} Is {binarySearch.SquareRoot(squareRoot)}");
+            #endregion
+
+            #endregion
         }
     }
 }
