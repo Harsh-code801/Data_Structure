@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Structure.Multi_Dimensional_Array
+namespace Data_Structure.Basic_DSA.Multi_Dimensional_Array
 {
     internal class MultiDimArr
     {

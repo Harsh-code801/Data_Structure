@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Structure.Strings
+namespace Data_Structure.Basic_DSA.Strings
 {
     internal class String
     {

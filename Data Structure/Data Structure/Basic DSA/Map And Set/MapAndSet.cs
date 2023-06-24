@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Data_Structure.Map_And_Set
+namespace Data_Structure.Basic_DSA.Map_And_Set
 {
     internal class MapAndSet
     {

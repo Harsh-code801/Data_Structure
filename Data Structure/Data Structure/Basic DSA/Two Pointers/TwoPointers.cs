@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Structure.Two_Pointers
+namespace Data_Structure.Basic_DSA.Two_Pointers
 {
     internal class TwoPointers
     {

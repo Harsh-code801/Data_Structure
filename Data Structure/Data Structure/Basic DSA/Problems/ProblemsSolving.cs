@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Data_Structure.Problems
+namespace Data_Structure.Basic_DSA.Problems
 {
     internal class ProblemsSolving
     {

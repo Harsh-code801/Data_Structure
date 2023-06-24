@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Structure.Arrays
+namespace Data_Structure.Basic_DSA.Arrays
 {
     internal class Array
     {

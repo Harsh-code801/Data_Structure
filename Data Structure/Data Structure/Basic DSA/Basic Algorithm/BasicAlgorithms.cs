@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data_Structure.Basic_Algorithm
+namespace Data_Structure.Basic_DSA.Basic_Algorithm
 {
     internal class BasicAlgorithms
     {
