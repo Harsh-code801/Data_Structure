@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.PortableExecutable;
 using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,5 +74,34 @@ namespace Data_Structure.Intermediate_DSA.Binary_Search
             return binarySearch(arr, l, mid - 1, key);
         } 
         #endregion
+        public int SingleElementinaSortedArray(int []arr)
+        {
+            if (arr.Length == 1)
+                return arr[0];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i == 0)
+                {
+                    if (arr[i] != arr[i + 1])
+                        return arr[i];
+                }
+                else if (i + 1 == arr.Length)
+                {
+                    if (arr[i] != arr[i - 1])
+                        return arr[i];
+                }
+                else if (!(arr[i] == arr[i - 1] || arr[i] == arr[i + 1]))
+                    return arr[i];
+
+            }
+            return -1;
+
+            /*int XOR = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                XOR = XOR ^ arr[i];
+            }
+            return XOR;*/
+        }
     }
 }

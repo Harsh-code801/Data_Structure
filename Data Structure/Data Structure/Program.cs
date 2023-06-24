@@ -361,6 +361,15 @@ namespace DataStructure
             bSearch = new int[] { 30, 40, 50, 10, 20 }; find = 10;
             Console.WriteLine($"Binary Search: {find} found at {binarySearch.pivotedBinarySearch(bSearch, bSearch.Length, find)}");
             #endregion
+
+            #region Single Element in a Sorted Array
+            int[] findNotTwisePrintElement = new int[] { 1, 1, 3, 3, 6, 8, 8 };
+            findNotTwisePrintElement = new int[] { 1,18, 18 };
+            findNotTwisePrintElement = new int[] { 1,1, 18 };
+            findNotTwisePrintElement = new int[] { 55 };
+            Console.WriteLine($"Single Element in Array: {binarySearch.SingleElementinaSortedArray(findNotTwisePrintElement)}");
+            #endregion
+
             #endregion
         }
     }
