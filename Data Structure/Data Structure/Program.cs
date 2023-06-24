@@ -354,6 +354,13 @@ namespace DataStructure
             Console.WriteLine($"Square Root of {squareRoot} Is {binarySearch.SquareRoot(squareRoot)}");
             #endregion
 
+            #region Search In Rotated Sorted Array (Binary Search)
+            int[] bSearch = new int[] { 5, 6, 7, 8, 9, 10, 1, 2, 3 }; int find = 6;
+            bSearch = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; find = 9;
+            bSearch = new int[] { 5, 6, 7, 8, 9, 10, 1, 2, 3 }; find = 30;
+            bSearch = new int[] { 30, 40, 50, 10, 20 }; find = 10;
+            Console.WriteLine($"Binary Search: {find} found at {binarySearch.pivotedBinarySearch(bSearch, bSearch.Length, find)}");
+            #endregion
             #endregion
         }
     }
