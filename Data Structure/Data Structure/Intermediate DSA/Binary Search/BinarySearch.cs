@@ -21,7 +21,7 @@ namespace Data_Structure.Intermediate_DSA.Binary_Search
             }
             return i - 1;
         }
-        #region Binary Search
+        #region Search In Rotated Sorted Array (Binary Search)
         public int pivotedBinarySearch(int[] arr, int n, int key)
         {
             int pivot = findPivot(arr, 0, n - 1);
