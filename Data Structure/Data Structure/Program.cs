@@ -377,7 +377,11 @@ namespace DataStructure
             matrixMedian = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
             Console.WriteLine($"Matrix Median Is: {binarySearch.MatrixMedian(matrixMedian)}");
             #endregion
-            
+
+            #region Aggressive Cows
+            int[] aggressiveCows = new int[] { 1, 2, 4, 8, 9 };int cowsCount = 3;
+            Console.WriteLine($"Minimum Distance {binarySearch.AggressiveCows(aggressiveCows, cowsCount)}");
+            #endregion
             #endregion
         }
     }

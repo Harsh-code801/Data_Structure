@@ -118,5 +118,51 @@ namespace Data_Structure.Intermediate_DSA.Binary_Search
             Array.Sort(arr2);
             return arr2[arr2.Length / 2];
         }
+        public int AggressiveCows(int []arr,int cowsCount)
+        {
+            Array.Sort(arr);
+            int max_dist = arr[arr.Length - 1];
+            int ans = -1;
+            /*
+                try out each possible distance 
+                from 1 to max_dist
+                store the distance in ans, 
+                if the arrangement is possible
+                otherwise, break.
+            */
+            for (int dist = 1; dist <= max_dist; dist++)
+            {
+                if (isPossible(arr, dist, arr.Length, cowsCount))
+                {
+                    ans = dist;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return ans;
+        }
+        private bool isPossible(int[] arr, int dist, int N, int K)
+        {
+            int count = 1;
+
+            // place a cow at 1st position
+            int prev = arr[0];
+
+            for (int i = 0; i < N; i++)
+            {
+                // check if we can place a cow at that position
+                if (arr[i] - prev >= dist)
+                {
+                    prev = arr[i];
+                    count++;
+                }
+            }
+            // all the cows are placed
+            if (count >= K)
+                return true;
+            return false;
+        }
     }
 }
