@@ -370,6 +370,14 @@ namespace DataStructure
             Console.WriteLine($"Single Element in Array: {binarySearch.SingleElementinaSortedArray(findNotTwisePrintElement)}");
             #endregion
 
+            #region Matrix Median
+            int[,] matrixMedian = new int [,]{ { 1, 3, 5 }, { 2, 6, 9 }, { 3, 6, 9 } };
+            matrixMedian = new int[,] { { 1, 3, 4 }, { 2, 5, 6 }, { 7, 8, 9 } };
+            matrixMedian = new int[,] { { 1, 3, 8 }, { 2, 3, 4 }, { 1, 2, 5 } };
+            matrixMedian = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
+            Console.WriteLine($"Matrix Median Is: {binarySearch.MatrixMedian(matrixMedian)}");
+            #endregion
+            
             #endregion
         }
     }

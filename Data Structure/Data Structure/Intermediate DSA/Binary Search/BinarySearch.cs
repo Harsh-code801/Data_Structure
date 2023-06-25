@@ -72,9 +72,9 @@ namespace Data_Structure.Intermediate_DSA.Binary_Search
                 return binarySearch(arr, mid + 1, r, key);
 
             return binarySearch(arr, l, mid - 1, key);
-        } 
+        }
         #endregion
-        public int SingleElementinaSortedArray(int []arr)
+        public int SingleElementinaSortedArray(int[] arr)
         {
             if (arr.Length == 1)
                 return arr[0];
@@ -102,6 +102,21 @@ namespace Data_Structure.Intermediate_DSA.Binary_Search
                 XOR = XOR ^ arr[i];
             }
             return XOR;*/
+        }
+        public int MatrixMedian(int[,] arr)
+        {
+            int[] arr2 = new int[arr.GetLength(0) * arr.GetLength(1)];
+            int index = 0;
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr2[index] = arr[i, j];
+                    index++;
+                }
+            }
+            Array.Sort(arr2);
+            return arr2[arr2.Length / 2];
         }
     }
 }
