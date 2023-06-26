@@ -5,6 +5,8 @@ using Data_Structure.Basic_DSA.Multi_Dimensional_Array;
 using Data_Structure.Basic_DSA.Problems;
 using Data_Structure.Basic_DSA.Two_Pointers;
 using Data_Structure.Intermediate_DSA.Binary_Search;
+using Data_Structure.Intermediate_DSA.Recursion_Basic;
+using System.Security;
 
 namespace DataStructure
 {
@@ -382,6 +384,17 @@ namespace DataStructure
             int[] aggressiveCows = new int[] { 1, 2, 4, 8, 9 };int cowsCount = 3;
             Console.WriteLine($"Minimum Distance {binarySearch.AggressiveCows(aggressiveCows, cowsCount)}");
             #endregion
+            #endregion
+
+            #region Recursion Basic
+
+            RecursionBasic recursionBasic = new RecursionBasic();
+
+            #region Marge Sort
+            int[] margeSort = new int[] { 5, 8, 1, 0, 4, 2, 6, 7 };
+            Console.WriteLine($"Marge Sort: of {string.Join(", ", margeSort)} Is {recursionBasic.MargeSort(margeSort)}");
+            #endregion
+
             #endregion
         }
     }
