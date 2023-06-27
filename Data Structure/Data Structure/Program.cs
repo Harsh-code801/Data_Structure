@@ -396,6 +396,12 @@ namespace DataStructure
             Console.WriteLine($"Marge Sort: of {string.Join(", ", margeSort)} Is {recursionBasic.MargeSort(margeSort)}");
             #endregion
 
+            #region Quick Sort
+            int[] quickSort = new int[] { 5, 7, 1, 0, 3, 9 };
+            quickSort = new int[] { 7, 2, 5, 5, 3, 4 };
+            Console.WriteLine($"Quick Sort: of {string.Join(", ", quickSort)} Is {recursionBasic.QuickSort(quickSort,0,quickSort.Length-1)}");
+            #endregion
+
             #endregion
         }
     }

@@ -8,6 +8,7 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
 {
     internal class RecursionBasic
     {
+        #region MargeSort
         public string MargeSort(int[] arr)
         {
             DivideAndMarge(arr, 0, arr.Length - 1);
@@ -73,6 +74,42 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
                 j++;
                 k++;
             }
+        }
+        #endregion
+
+        public string QuickSort(int[] arr, int l, int r)
+        {
+            if (l < r)
+            {
+
+                int pivote = divide(arr, l, r);
+
+                QuickSort(arr, l, pivote - 1);
+                QuickSort(arr, pivote + 1, r);
+            }
+
+            return string.Join(", ", arr);
+        }
+        private int divide(int[] arr, int l, int r)
+        {
+            int pivote = arr[r];
+
+            int i = l - 1;
+            for (int j = l; j <= r-1; j++)
+            {
+                if (arr[j] < pivote)
+                {
+                    i++;
+                    int temp1 = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp1;
+                }
+            }
+            int temp2 = arr[r];
+            arr[r] = arr[i + 1];
+            arr[i + 1] = temp2;
+
+            return i + 1;
         }
     }
 }
