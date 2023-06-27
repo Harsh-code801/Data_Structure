@@ -366,14 +366,14 @@ namespace DataStructure
 
             #region Single Element in a Sorted Array
             int[] findNotTwisePrintElement = new int[] { 1, 1, 3, 3, 6, 8, 8 };
-            findNotTwisePrintElement = new int[] { 1,18, 18 };
-            findNotTwisePrintElement = new int[] { 1,1, 18 };
+            findNotTwisePrintElement = new int[] { 1, 18, 18 };
+            findNotTwisePrintElement = new int[] { 1, 1, 18 };
             findNotTwisePrintElement = new int[] { 55 };
             Console.WriteLine($"Single Element in Array: {binarySearch.SingleElementinaSortedArray(findNotTwisePrintElement)}");
             #endregion
 
             #region Matrix Median
-            int[,] matrixMedian = new int [,]{ { 1, 3, 5 }, { 2, 6, 9 }, { 3, 6, 9 } };
+            int[,] matrixMedian = new int[,] { { 1, 3, 5 }, { 2, 6, 9 }, { 3, 6, 9 } };
             matrixMedian = new int[,] { { 1, 3, 4 }, { 2, 5, 6 }, { 7, 8, 9 } };
             matrixMedian = new int[,] { { 1, 3, 8 }, { 2, 3, 4 }, { 1, 2, 5 } };
             matrixMedian = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
@@ -381,7 +381,7 @@ namespace DataStructure
             #endregion
 
             #region Aggressive Cows
-            int[] aggressiveCows = new int[] { 1, 2, 4, 8, 9 };int cowsCount = 3;
+            int[] aggressiveCows = new int[] { 1, 2, 4, 8, 9 }; int cowsCount = 3;
             Console.WriteLine($"Minimum Distance {binarySearch.AggressiveCows(aggressiveCows, cowsCount)}");
             #endregion
             #endregion
@@ -399,7 +399,14 @@ namespace DataStructure
             #region Quick Sort
             int[] quickSort = new int[] { 5, 7, 1, 0, 3, 9 };
             quickSort = new int[] { 7, 2, 5, 5, 3, 4 };
-            Console.WriteLine($"Quick Sort: of {string.Join(", ", quickSort)} Is {recursionBasic.QuickSort(quickSort,0,quickSort.Length-1)}");
+            Console.WriteLine($"Quick Sort: of {string.Join(", ", quickSort)} Is {recursionBasic.QuickSort(quickSort, 0, quickSort.Length - 1)}");
+            #endregion
+
+            #region Find K-th Element
+            int[] arr1 = new int[] { 1, 4, 6, 7 }; int[] arr2 = new int[] { 2, 3, 5, 6 }; int FindElementindex = 6;
+            arr1 = new int[] { 0, 1, 2, 8, 9 }; arr2 = new int[] { 5, 6, 7, 22 }; FindElementindex = 3;
+            arr1 = new int[] { 0, 1, 2, 3, 4 }; arr2 = new int[] { 5, 6, 7, 8 }; FindElementindex = 3;
+            Console.WriteLine($"Find K-th Element {recursionBasic.FindKthElement(arr1, arr2, FindElementindex)}");
             #endregion
 
             #endregion

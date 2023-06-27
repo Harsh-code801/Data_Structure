@@ -77,6 +77,7 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
         }
         #endregion
 
+        #region Quick Sort
         public string QuickSort(int[] arr, int l, int r)
         {
             if (l < r)
@@ -95,7 +96,7 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
             int pivote = arr[r];
 
             int i = l - 1;
-            for (int j = l; j <= r-1; j++)
+            for (int j = l; j <= r - 1; j++)
             {
                 if (arr[j] < pivote)
                 {
@@ -110,6 +111,43 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
             arr[i + 1] = temp2;
 
             return i + 1;
+        }
+        #endregion
+
+        public int FindKthElement(int[] arr1, int[] arr2,int k)
+        {
+            int i = 0; int j = 0;
+            List<int> list = new List<int>();
+            while (i < arr1.Length && j < arr2.Length)
+            {
+                if (arr1[i] < arr2[j])
+                {
+                    list.Add(arr1[i]);
+                    i++;
+                }
+                else if (arr1[i] > arr2[j])
+                {
+                    list.Add(arr2[j]);
+                    j++;
+                }else if (arr1[i] == arr2[j])
+                {
+                    list.Add(arr1[i]);
+                    i++;
+                }
+            }
+            while (i < arr1.Length)
+            {
+                list.Add(arr1[i]);
+                i++;
+            }
+            while (j < arr2.Length)
+            {
+                list.Add(arr2[j]);
+                j++;
+
+            }
+            Console.WriteLine($"\nMarge Sorted Array: {string.Join(", ", list)}");
+            return list[k];
         }
     }
 }
