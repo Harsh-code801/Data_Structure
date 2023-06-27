@@ -55,6 +55,10 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
                     arr[k] = right[j];
                     j++;
                 }
+                else if (left[i] == right[j])
+                {
+                    i++;
+                }
                 k++;
             }
             while (i < n1)

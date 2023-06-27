@@ -392,6 +392,7 @@ namespace DataStructure
 
             #region Marge Sort
             int[] margeSort = new int[] { 5, 8, 1, 0, 4, 2, 6, 7 };
+            margeSort = new int[] { 5, 5, 1, 0, 4, 2, 6, 7 };
             Console.WriteLine($"Marge Sort: of {string.Join(", ", margeSort)} Is {recursionBasic.MargeSort(margeSort)}");
             #endregion
 
