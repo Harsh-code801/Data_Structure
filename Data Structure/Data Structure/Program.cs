@@ -409,6 +409,11 @@ namespace DataStructure
             Console.WriteLine($"Find K-th Element {recursionBasic.FindKthElement(arr1, arr2, FindElementindex)}");
             #endregion
 
+            #region Family Structure
+            int level = 3; int child = 115;
+            Console.WriteLine($"Family Structure Level {level}, child {child} = {recursionBasic.FamilyStructure(level, child)}");
+            #endregion
+
             #endregion
         }
     }

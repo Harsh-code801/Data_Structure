@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -114,7 +115,7 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
         }
         #endregion
 
-        public int FindKthElement(int[] arr1, int[] arr2,int k)
+        public int FindKthElement(int[] arr1, int[] arr2, int k)
         {
             int i = 0; int j = 0;
             List<int> list = new List<int>();
@@ -129,7 +130,8 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
                 {
                     list.Add(arr2[j]);
                     j++;
-                }else if (arr1[i] == arr2[j])
+                }
+                else if (arr1[i] == arr2[j])
                 {
                     list.Add(arr1[i]);
                     i++;
@@ -148,6 +150,31 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
             }
             Console.WriteLine($"\nMarge Sorted Array: {string.Join(", ", list)}");
             return list[k];
+        }
+
+        public string FamilyStructure(int level, int child)
+        {
+            if (level == 1)
+                return "Mail";
+
+            // Recursively find parent's
+            // profession. If parent
+            // is a Doctor, this node
+            // will be a Doctor if it
+            // is at odd position and an
+            // engineer if at even position
+            if (FamilyStructure(level - 1,
+                              (child + 1) / 2) == "Femail")
+                return (child % 2 > 0) ?
+                                 "Femail" : "Mail";
+
+            // If parent is an engineer,
+            // then current node will be
+            // an engineer if at add
+            // position and doctor if even
+            // position.
+            return (child % 2 > 0) ?
+                             "Mail" : "Femail";
         }
     }
 }
