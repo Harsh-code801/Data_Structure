@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -156,7 +157,7 @@ namespace Data_Structure.Intermediate_DSA.Recursion_Basic
         {
             if (level == 1)
                 return "Mail";
-
+            Console.WriteLine("Level " + level);
             // Recursively find parent's
             // profession. If parent
             // is a Doctor, this node

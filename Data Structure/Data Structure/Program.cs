@@ -410,8 +410,13 @@ namespace DataStructure
             #endregion
 
             #region Family Structure
-            int level = 3; int child = 115;
+            int level = 4; int child = 5;
             Console.WriteLine($"Family Structure Level {level}, child {child} = {recursionBasic.FamilyStructure(level, child)}");
+            #endregion
+
+            #region Binary strings with no consecutive 1s.
+            int binaryStringWithNoconsecutive1S = 4;
+            //Console.WriteLine("Binary strings with no consecutive 1s: "+recursionBasic.)
             #endregion
 
             #endregion
