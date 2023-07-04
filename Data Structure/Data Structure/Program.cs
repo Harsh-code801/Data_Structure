@@ -5,6 +5,7 @@ using Data_Structure.Basic_DSA.Multi_Dimensional_Array;
 using Data_Structure.Basic_DSA.Problems;
 using Data_Structure.Basic_DSA.Two_Pointers;
 using Data_Structure.Intermediate_DSA.Binary_Search;
+using Data_Structure.Intermediate_DSA.Linked_List;
 using Data_Structure.Intermediate_DSA.Recursion_Basic;
 using System.Security;
 
@@ -345,78 +346,91 @@ namespace DataStructure
         }
         static void Main(string[] args)
         {
-            #region Binary Search
+            if (false)
+            {
+                #region Binary Search
 
-            BinarySearch binarySearch = new BinarySearch();
+                BinarySearch binarySearch = new BinarySearch();
 
-            #region Square Root
-            int squareRoot = 11;
-            squareRoot = 8;
-            squareRoot = 15;
-            Console.WriteLine($"Square Root of {squareRoot} Is {binarySearch.SquareRoot(squareRoot)}");
-            #endregion
+                #region Square Root
+                int squareRoot = 11;
+                squareRoot = 8;
+                squareRoot = 15;
+                Console.WriteLine($"Square Root of {squareRoot} Is {binarySearch.SquareRoot(squareRoot)}");
+                #endregion
 
-            #region Search In Rotated Sorted Array (Binary Search)
-            int[] bSearch = new int[] { 5, 6, 7, 8, 9, 10, 1, 2, 3 }; int find = 6;
-            bSearch = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; find = 9;
-            bSearch = new int[] { 5, 6, 7, 8, 9, 10, 1, 2, 3 }; find = 30;
-            bSearch = new int[] { 30, 40, 50, 10, 20 }; find = 10;
-            Console.WriteLine($"Binary Search: {find} found at {binarySearch.pivotedBinarySearch(bSearch, bSearch.Length, find)}");
-            #endregion
+                #region Search In Rotated Sorted Array (Binary Search)
+                int[] bSearch = new int[] { 5, 6, 7, 8, 9, 10, 1, 2, 3 }; int find = 6;
+                bSearch = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; find = 9;
+                bSearch = new int[] { 5, 6, 7, 8, 9, 10, 1, 2, 3 }; find = 30;
+                bSearch = new int[] { 30, 40, 50, 10, 20 }; find = 10;
+                Console.WriteLine($"Binary Search: {find} found at {binarySearch.pivotedBinarySearch(bSearch, bSearch.Length, find)}");
+                #endregion
 
-            #region Single Element in a Sorted Array
-            int[] findNotTwisePrintElement = new int[] { 1, 1, 3, 3, 6, 8, 8 };
-            findNotTwisePrintElement = new int[] { 1, 18, 18 };
-            findNotTwisePrintElement = new int[] { 1, 1, 18 };
-            findNotTwisePrintElement = new int[] { 55 };
-            Console.WriteLine($"Single Element in Array: {binarySearch.SingleElementinaSortedArray(findNotTwisePrintElement)}");
-            #endregion
+                #region Single Element in a Sorted Array
+                int[] findNotTwisePrintElement = new int[] { 1, 1, 3, 3, 6, 8, 8 };
+                findNotTwisePrintElement = new int[] { 1, 18, 18 };
+                findNotTwisePrintElement = new int[] { 1, 1, 18 };
+                findNotTwisePrintElement = new int[] { 55 };
+                Console.WriteLine($"Single Element in Array: {binarySearch.SingleElementinaSortedArray(findNotTwisePrintElement)}");
+                #endregion
 
-            #region Matrix Median
-            int[,] matrixMedian = new int[,] { { 1, 3, 5 }, { 2, 6, 9 }, { 3, 6, 9 } };
-            matrixMedian = new int[,] { { 1, 3, 4 }, { 2, 5, 6 }, { 7, 8, 9 } };
-            matrixMedian = new int[,] { { 1, 3, 8 }, { 2, 3, 4 }, { 1, 2, 5 } };
-            matrixMedian = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
-            Console.WriteLine($"Matrix Median Is: {binarySearch.MatrixMedian(matrixMedian)}");
-            #endregion
+                #region Matrix Median
+                int[,] matrixMedian = new int[,] { { 1, 3, 5 }, { 2, 6, 9 }, { 3, 6, 9 } };
+                matrixMedian = new int[,] { { 1, 3, 4 }, { 2, 5, 6 }, { 7, 8, 9 } };
+                matrixMedian = new int[,] { { 1, 3, 8 }, { 2, 3, 4 }, { 1, 2, 5 } };
+                matrixMedian = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 } };
+                Console.WriteLine($"Matrix Median Is: {binarySearch.MatrixMedian(matrixMedian)}");
+                #endregion
 
-            #region Aggressive Cows
-            int[] aggressiveCows = new int[] { 1, 2, 4, 8, 9 }; int cowsCount = 3;
-            Console.WriteLine($"Minimum Distance {binarySearch.AggressiveCows(aggressiveCows, cowsCount)}");
-            #endregion
-            #endregion
+                #region Aggressive Cows
+                int[] aggressiveCows = new int[] { 1, 2, 4, 8, 9 }; int cowsCount = 3;
+                Console.WriteLine($"Minimum Distance {binarySearch.AggressiveCows(aggressiveCows, cowsCount)}");
+                #endregion
+                #endregion
 
-            #region Recursion Basic
+                #region Recursion Basic
 
-            RecursionBasic recursionBasic = new RecursionBasic();
+                RecursionBasic recursionBasic = new RecursionBasic();
 
-            #region Marge Sort
-            int[] margeSort = new int[] { 5, 8, 1, 0, 4, 2, 6, 7 };
-            margeSort = new int[] { 5, 5, 1, 0, 4, 2, 6, 7 };
-            Console.WriteLine($"Marge Sort: of {string.Join(", ", margeSort)} Is {recursionBasic.MargeSort(margeSort)}");
-            #endregion
+                #region Marge Sort
+                int[] margeSort = new int[] { 5, 8, 1, 0, 4, 2, 6, 7 };
+                margeSort = new int[] { 5, 5, 1, 0, 4, 2, 6, 7 };
+                Console.WriteLine($"Marge Sort: of {string.Join(", ", margeSort)} Is {recursionBasic.MargeSort(margeSort)}");
+                #endregion
 
-            #region Quick Sort
-            int[] quickSort = new int[] { 5, 7, 1, 0, 3, 9 };
-            quickSort = new int[] { 7, 2, 5, 5, 3, 4 };
-            Console.WriteLine($"Quick Sort: of {string.Join(", ", quickSort)} Is {recursionBasic.QuickSort(quickSort, 0, quickSort.Length - 1)}");
-            #endregion
+                #region Quick Sort
+                int[] quickSort = new int[] { 5, 7, 1, 0, 3, 9 };
+                quickSort = new int[] { 7, 2, 5, 5, 3, 4 };
+                Console.WriteLine($"Quick Sort: of {string.Join(", ", quickSort)} Is {recursionBasic.QuickSort(quickSort, 0, quickSort.Length - 1)}");
+                #endregion
 
-            #region Find K-th Element
-            int[] arr1 = new int[] { 1, 4, 6, 7 }; int[] arr2 = new int[] { 2, 3, 5, 6 }; int FindElementindex = 6;
-            arr1 = new int[] { 0, 1, 2, 8, 9 }; arr2 = new int[] { 5, 6, 7, 22 }; FindElementindex = 3;
-            arr1 = new int[] { 0, 1, 2, 3, 4 }; arr2 = new int[] { 5, 6, 7, 8 }; FindElementindex = 3;
-            Console.WriteLine($"Find K-th Element {recursionBasic.FindKthElement(arr1, arr2, FindElementindex)}");
-            #endregion
+                #region Find K-th Element
+                int[] arr1 = new int[] { 1, 4, 6, 7 }; int[] arr2 = new int[] { 2, 3, 5, 6 }; int FindElementindex = 6;
+                arr1 = new int[] { 0, 1, 2, 8, 9 }; arr2 = new int[] { 5, 6, 7, 22 }; FindElementindex = 3;
+                arr1 = new int[] { 0, 1, 2, 3, 4 }; arr2 = new int[] { 5, 6, 7, 8 }; FindElementindex = 3;
+                Console.WriteLine($"Find K-th Element {recursionBasic.FindKthElement(arr1, arr2, FindElementindex)}");
+                #endregion
 
-            #region Family Structure
-            int level = 4; int child = 5;
-            Console.WriteLine($"Family Structure Level {level}, child {child} = {recursionBasic.FamilyStructure(level, child)}");
-            #endregion
+                #region Family Structure
+                int level = 4; int child = 5;
+                Console.WriteLine($"Family Structure Level {level}, child {child} = {recursionBasic.FamilyStructure(level, child)}");
+                #endregion
 
-            #region Binary strings with no consecutive 1s.
-            int binaryStringWithNoconsecutive1S = 4;
-            //Console.WriteLine("Binary strings with no consecutive 1s: "+recursionBasic.)
+                #region Binary strings with no consecutive 1s.
+                int binaryStringWithNoconsecutive1S = 4;
+                //Console.WriteLine("Binary strings with no consecutive 1s: "+recursionBasic.)
+                #endregion
+
+                #endregion 
+            }
+
+            #region Linked List
+            LinkedList linkedList = new LinkedList();
+
+            #region Reverse Linked List
+            int[] reverseList = new int[] { 30, 12, 80, 6 };
+            linkedList.ReverseList(reverseList);
             #endregion
 
             #endregion
